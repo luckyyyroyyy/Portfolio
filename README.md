@@ -50,8 +50,8 @@ Add screenshots of your portfolio here.
 
 If you want to connect with me:
 
-- Email: your-email@example.com
-- GitHub: https://github.com/your-username
+- Email: luckyyyroyyy@gmail.com
+- GitHub: https://github.com/luckyyyroyyy
 
 ---
 
