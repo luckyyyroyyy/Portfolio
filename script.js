@@ -1,20 +1,60 @@
-        // Simple script to highlight nav links on scroll
+        // --- Tubelight Navbar Logic ---
+        const navItems = document.querySelectorAll('.nav-item');
+        const navLamp = document.getElementById('navLamp');
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
 
+        function updateLampPosition(activeItem) {
+            if (!activeItem || !navLamp) return;
+            const itemRect = activeItem.getBoundingClientRect();
+            const containerRect = activeItem.parentElement.getBoundingClientRect();
+            
+            // Calculate relative position within the container
+            const left = itemRect.left - containerRect.left;
+            const width = itemRect.width;
+
+            navLamp.style.width = `${width}px`;
+            navLamp.style.transform = `translateX(${left}px)`; // Using transform for smoother animation than left
+        }
+
+        // Initialize lamp position on load
+        window.addEventListener('load', () => {
+            const initialActive = document.querySelector('.nav-item.active') || navItems[0];
+            updateLampPosition(initialActive);
+        });
+
+        // Handle window resize dynamically to snap lamp
+        window.addEventListener('resize', () => {
+             const activeItem = document.querySelector('.nav-item.active');
+             updateLampPosition(activeItem);
+        });
+
+        // Handle click events (for smooth scroll, the href handles navigation, we just update UI)
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Remove active from all
+                navItems.forEach(n => n.classList.remove('active'));
+                // Add active to clicked
+                this.classList.add('active');
+                updateLampPosition(this);
+            });
+        });
+
+        // Update active nav link and lamp position strictly on scroll
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 60) {
+                // Add an offset so it triggers slightly before hitting the exact top
+                if (scrollY >= sectionTop - 150) {
                     current = section.getAttribute('id');
                 }
             });
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-target') === current) {
+                    item.classList.add('active');
+                    updateLampPosition(item);
                 }
             });
         });
