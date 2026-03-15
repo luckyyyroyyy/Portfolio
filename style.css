@@ -22,6 +22,12 @@
             overflow-x: hidden;
         }
 
+        /* --- Accessibility --- */
+        *:focus-visible {
+            outline: 2px solid var(--primary-red);
+            outline-offset: 3px;
+        }
+
         /* --- Navbar --- */
         nav {
             display: flex;

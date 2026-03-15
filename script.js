@@ -49,42 +49,42 @@
                 desc: 'A comprehensive web application designed to help users track their daily expenses and manage personal finances efficiently. It features a clean dashboard, expense categorization, and detailed reporting.',
                 img: 'images/expenses tracker.png',
                 tech: ['Python', 'Flask', 'SQLite', 'HTML/CSS', 'JavaScript'],
-                github: 'https://github.com/luckyyyroyyy'
+                github: 'https://github.com/luckyyyroyyy/Expense-tracker-pro.git'
             },
             'skill-swap': {
                 title: 'Skill Swap Pro',
                 desc: 'An innovative platform where users can connect to swap and mutually learn new skills. Features include user profiles, skill matching algorithms, real-time messaging, and review systems.',
                 img: 'images/skillswap.png',
                 tech: ['Python', 'Flask', 'SQLite', 'HTML', 'CSS', 'JavaScript'],
-                github: 'https://github.com/luckyyyroyyy'
+                github: 'https://github.com/luckyyyroyyy/Skill-Swap.git'
             },
             'student-management': {
                 title: 'Student Management System',
                 desc: 'A robust web application built for educational institutions to manage student records, track attendance, handle grading, and generate academic reports seamlessly.',
                 img: 'images/stumangsys.png',
                 tech: ['Python', 'Flask', 'SQLite', 'HTML', 'CSS', 'Bootstrap'],
-                github: 'https://github.com/luckyyyroyyy'
+                github: 'https://github.com/luckyyyroyyy/Student-management-system.git'
             },
             'weather-app': {
                 title: 'Weather App',
                 desc: 'A dynamic weather application that provides real-time atmospheric data, forecasts, and interactive weather maps by integrating with external RESTful weather APIs.',
                 img: 'images/weather.png',
                 tech: ['Python', 'Flask', 'OpenWeatherMap API', 'JavaScript', 'CSS'],
-                github: 'https://github.com/luckyyyroyyy'
+                github: 'https://github.com/luckyyyroyyy/weather-app-api.git'
             },
             'calculator': {
                 title: 'Calculator Dashboard',
                 desc: 'A highly functional and responsive calculator utility application designed for quick mathematical operations with advanced features and a modern OLED-inspired user interface.',
                 img: 'images/calculator.png',
                 tech: ['HTML', 'CSS', 'JavaScript', 'Python (Backend utility)'],
-                github: 'https://github.com/luckyyyroyyy'
+                github: 'https://github.com/luckyyyroyyy/Calculator--python.git'
             },
             'herbal-basket': {
                 title: 'The Herbal Basket',
                 desc: 'A full-featured e-commerce platform for herbal and organic products. Includes a shopping cart, secure checkout process integrated with Stripe API, and an admin dashboard.',
                 img: 'images/herbal.png',
                 tech: ['Python', 'Flask', 'SQLite', 'Stripe API', 'HTML/CSS/JS'],
-                github: 'https://github.com/luckyyyroyyy'
+                github: 'https://github.com/luckyyyroyyy?tab=repositories'
             }
         };
 

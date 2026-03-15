@@ -3,7 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky Roy | Full Stack Developer</title>
+    <!-- Primary Meta Tags -->
+    <title>Lucky Roy | Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Lucky Roy, a full-stack developer specializing in Python, Flask, and modern web applications.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://luckyyyroyyy.github.io/">
+    <meta property="og:title" content="Lucky Roy | Full-Stack Developer">
+    <meta property="og:description" content="Portfolio of Lucky Roy, a full-stack developer specializing in Python, Flask, and modern web applications.">
+    <meta property="og:image" content="images/avatar.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://luckyyyroyyy.github.io/">
+    <meta name="twitter:title" content="Lucky Roy | Full-Stack Developer">
+    <meta name="twitter:description" content="Portfolio of Lucky Roy, a full-stack developer specializing in Python, Flask, and modern web applications.">
+    <meta name="twitter:image" content="images/avatar.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -29,8 +45,8 @@
     <section id="home">
         <div class="hero-text">
             <h1>Hi, I'm Lucky Roy</h1>
-            <h2>Full Stack Developer | Python & Web Development</h2>
-            <p>I am a BCA student passionate about building practical web applications. I bring ideas to life through clean code and thoughtful design.</p>
+            <h2>Full-Stack Developer Specializing in Python & Modern Web Apps</h2>
+            <p>BCA student and developer driven by a passion for creating robust, scalable applications. I bridge the gap between elegant user interfaces and powerful backend architectures.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-outline">Contact Me</a>
@@ -88,7 +104,7 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-image">
-                <img src="images/lucky.png" alt="About Profile">
+                <img src="images/lucky.png" alt="About Profile" loading="lazy">
             </div>
             <div class="about-text">
                 <p>Hi! I'm Lucky Roy, a BCA final year student passionate about full-stack development.</p>
@@ -176,7 +192,7 @@
         <div class="projects-grid">
             
             <div class="project-card reveal" data-id="expense-tracker">
-                <img src="images/expenses tracker.png" alt="Expense Tracker" class="project-img">
+                <img src="images/expenses tracker.png" alt="Expense Tracker" class="project-img" loading="lazy">
                 <h3>Expense Tracker Web App</h3>
                 <p>A web application to track daily expenses and manage personal finances.</p>
                 <div class="tech-stack">
@@ -191,7 +207,7 @@
             </div>
 
             <div class="project-card reveal" data-id="skill-swap">
-                <img src="images/skillswap.png" alt="Skill Swap Pro" class="project-img">
+                <img src="images/skillswap.png" alt="Skill Swap Pro" class="project-img" loading="lazy">
                 <h3>Skill Swap Pro</h3>
                 <p>A platform for users to swap and mutually learn new skills.</p>
                 <div class="tech-stack">
@@ -208,7 +224,7 @@
             </div>
 
             <div class="project-card reveal" data-id="student-management">
-                <img src="images/stumangsys.png" alt="Student Management System" class="project-img">
+                <img src="images/stumangsys.png" alt="Student Management System" class="project-img" loading="lazy">
                 <h3>Student Management System</h3>
                 <p>A comprehensive web app for managing student records and data.</p>
                 <div class="tech-stack">
@@ -224,7 +240,7 @@
             </div>
 
             <div class="project-card reveal" data-id="weather-app">
-                <img src="images/weather.png" alt="Weather App" class="project-img">
+                <img src="images/weather.png" alt="Weather App" class="project-img" loading="lazy">
                 <h3>Weather App</h3>
                 <p>An application that provides real-time weather data by integrating an external API.</p>
                 <div class="tech-stack">
@@ -238,7 +254,7 @@
             </div>
 
             <div class="project-card reveal" data-id="calculator">
-                <img src="images/calculator.png" alt="Calculator App" class="project-img">
+                <img src="images/calculator.png" alt="Calculator App" class="project-img" loading="lazy">
                 <h3>Calculator Dashboard</h3>
                 <p>A functional calculator utility application for quick mathematical operations.</p>
                 <div class="tech-stack">
@@ -251,7 +267,7 @@
             </div>
 
             <div class="project-card reveal" data-id="herbal-basket">
-                <img src="images/herbal.png" alt="The Herbal Basket" class="project-img">
+                <img src="images/herbal.png" alt="The Herbal Basket" class="project-img" loading="lazy">
                 <h3>The Herbal Basket</h3>
                 <p>An online store platform for herbal products with payment integration.</p>
                 <div class="tech-stack">
@@ -319,10 +335,17 @@
                 </div>
             </div>
 
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="37155e05-54ca-4784-b337-d1029321d2f1">
+                
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                
+                <!-- Optional: To redirect user after successful submit -->
+                <!-- <input type="hidden" name="redirect" value="https://web3forms.com/success"> -->
+
                 <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
             </form>
         </div>
