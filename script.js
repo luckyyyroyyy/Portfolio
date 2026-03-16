@@ -199,6 +199,16 @@
             }
         });
 
+        // --- View Resume Button Logic ---
+        const viewResumeBtn = document.getElementById('viewResumeBtn');
+        if (viewResumeBtn) {
+            viewResumeBtn.addEventListener('click', () => {
+                // Update the resumeUrl to your resume file path or external link
+                const resumeUrl = 'resume.pdf'; // Change this to your resume path or URL
+                window.open(resumeUrl, '_blank');
+            });
+        }
+
         // --- Back to Top Button Logic ---
         const backToTopBtn = document.getElementById('backToTop');
 
