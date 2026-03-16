@@ -25,6 +25,7 @@ portfolio/
 ├── index.html
 ├── style.css
 ├── script.js
+├── resume.pdf
 ├── images/
 │   └── profile.jpg
 └── README.md
