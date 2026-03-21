@@ -401,9 +401,11 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .skill-category {
@@ -427,24 +429,111 @@
             margin-bottom: 20px;
         }
 
-        .skill-items {
+        .skill-icons-row {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
             justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
-        .skill-items .tech-pill {
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .skill-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
         }
 
-        .skill-items .tech-pill:hover {
-            transform: translateY(-5px) scale(1.1);
-            text-shadow: 0 0 20px currentColor, 0 0 30px currentColor; /* Glow matches the icon's color */
-            background: rgba(255, 255, 255, 0.1); /* Slightly brightens the button background on hover */
-            border-color: currentColor;
+        .icon-container {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            transition: 0.3s;
         }
+
+        .skill-icon-item:hover .icon-container {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .icon-container.html { color: #E34F26; }
+        .icon-container.css { color: #1572B6; }
+        .icon-container.js { color: #F7DF1E; }
+        .icon-container.python { color: #FFD43B; }
+        .icon-container.flask { color: #ffffff; }
+        .icon-container.api { color: #4FC08D; }
+        .icon-container.sqlite { color: #54a6db; }
+        .icon-container.mysql { color: #F29111; }
+        .icon-container.git { color: #F05032; }
+        .icon-container.github { color: #ffffff; }
+        .icon-container.vscode { color: #007ACC; }
+        .icon-container.antigravity { color: #ff5722; }
+        .icon-container.codeblocks { color: #4caf50; }
+        .icon-container.vb { color: #0078d7; }
+        .icon-container.docker { color: #2496ed; }
+        .icon-container.windows { color: #0078d7; }
+        .icon-container.mac { color: #ffffff; }
+        .icon-container.kali { color: #557c94; }
+        .icon-container.ubuntu { color: #E95420; }
+
+        .skill-icon-item span {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .skill-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .skill-bar-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .skill-bar-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+
+        .progress.html { background: #E34F26; }
+        .progress.css { background: #1572B6; }
+        .progress.js { background: #F7DF1E; }
+        .progress.python { background: #FFD43B; }
+        .progress.flask { background: #ffffff; }
+        .progress.sqlite { background: #54a6db; }
+        .progress.mysql { background: #F29111; }
+        .progress.git { background: #F05032; }
+        .progress.github { background: #ffffff; }
+        .progress.codeblocks { background: #4caf50; }
+        .progress.docker { background: #2496ed; }
+        .progress.windows { background: #0078d7; }
+        .progress.ubuntu { background: #E95420; }
 
         /* --- Projects Section --- */
         #projects {
@@ -608,9 +697,11 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .service-card {
@@ -653,9 +744,11 @@
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .cert-card {
@@ -683,8 +776,46 @@
 
         .cert-card h3 {
             font-size: 18px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--text-main);
+        }
+
+        .cert-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .cert-badge.clickable-badge {
+            cursor: pointer;
+        }
+
+        .cert-badge.clickable-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+            filter: brightness(1.2);
+        }
+
+        .cert-red {
+            background: rgba(255, 0, 51, 0.1);
+            color: var(--primary-red);
+            border: 1px solid rgba(255, 0, 51, 0.2);
+        }
+
+        .cert-blue {
+            background: rgba(84, 166, 219, 0.1);
+            color: #54a6db;
+            border: 1px solid rgba(84, 166, 219, 0.2);
+        }
+
+        .cert-yellow {
+            background: rgba(255, 212, 59, 0.1);
+            color: #FFD43B;
+            border: 1px solid rgba(255, 212, 59, 0.2);
         }
 
         .cert-card p {

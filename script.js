@@ -226,3 +226,36 @@
                 behavior: 'smooth'
             });
         });
+
+        // --- Certificate Modals Logic ---
+        const certModal = document.getElementById('cert-modal');
+        const closeCertBtn = document.querySelector('.close-cert');
+        const certModalImg = document.getElementById('cert-modal-img');
+        const certModalTitle = document.getElementById('cert-modal-title');
+        const certBadges = document.querySelectorAll('.cert-badge.clickable-badge');
+
+        certBadges.forEach(badge => {
+            badge.addEventListener('click', () => {
+                const imgSrc = badge.getAttribute('data-cert-img');
+                const title = badge.getAttribute('data-cert-title');
+                
+                certModalImg.src = imgSrc;
+                certModalTitle.textContent = title;
+                certModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        if (closeCertBtn && certModal) {
+            closeCertBtn.addEventListener('click', () => {
+                certModal.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
+
+            certModal.addEventListener('click', (e) => {
+                if (e.target === certModal) {
+                    certModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
