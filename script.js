@@ -280,3 +280,16 @@ if (closeCertBtn && certModal) {
         }
     });
 }
+
+// --- Contact Form Validation ---
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    const nameInput = contactForm.querySelector('input[name="name"]');
+    
+    if (nameInput) {
+        // Prevent numbers from being entered
+        nameInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+    }
+}
