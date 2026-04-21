@@ -53,7 +53,8 @@
             border: 1px solid var(--border-color);
             backdrop-filter: blur(16px);
             padding: 4px 4px;
-            border-radius: 9999px; /* Fully rounded */
+            border-radius: 9999px;
+            /* Fully rounded */
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             position: relative;
         }
@@ -84,26 +85,41 @@
         }
 
         /* Mobile vs Desktop spans */
-        .nav-text { display: none; }
-        .nav-icon { display: inline-flex; font-size: 18px; }
+        .nav-text {
+            display: none;
+        }
+
+        .nav-icon {
+            display: inline-flex;
+            font-size: 18px;
+        }
 
         @media (min-width: 768px) {
-            .nav-text { display: inline; }
-            .nav-icon { display: none; }
+            .nav-text {
+                display: inline;
+            }
+
+            .nav-icon {
+                display: none;
+            }
         }
 
         /* --- The Lamp Glow --- */
         .nav-lamp {
             position: absolute;
             top: 0;
-            left: 0; /* Will be updated via JS */
-            width: 0; /* Will be updated via JS */
+            left: 0;
+            /* Will be updated via JS */
+            width: 0;
+            /* Will be updated via JS */
             height: 100%;
-            background: rgba(255, 0, 51, 0.05); /* Very subtle red */
+            background: rgba(255, 0, 51, 0.05);
+            /* Very subtle red */
             border-radius: 9999px;
             z-index: 1;
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            pointer-events: none; /* Don't block clicks */
+            pointer-events: none;
+            /* Don't block clicks */
         }
 
         .lamp-base {
@@ -118,7 +134,8 @@
         }
 
         /* Create the glowing blurred pseudo-elements */
-        .lamp-base::before, .lamp-base::after {
+        .lamp-base::before,
+        .lamp-base::after {
             content: '';
             position: absolute;
             background: rgba(255, 0, 51, 0.2);
@@ -237,7 +254,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transform: translateX(40px); /* Move slightly right */
+            transform: translateX(40px);
+            /* Move slightly right */
         }
 
         .main-avatar {
@@ -301,23 +319,80 @@
             cursor: pointer;
         }
 
-        .icon-react { --icon-color: #61DAFB; --icon-shadow: rgba(97, 218, 251, 0.3); --icon-inset: rgba(97, 218, 251, 0.2); --icon-hover: rgba(97, 218, 251, 0.6); }
-        .icon-js { --icon-color: #F7DF1E; --icon-shadow: rgba(247, 223, 30, 0.3); --icon-inset: rgba(247, 223, 30, 0.2); --icon-hover: rgba(247, 223, 30, 0.6); }
-        .icon-html { --icon-color: #E34F26; --icon-shadow: rgba(227, 79, 38, 0.3); --icon-inset: rgba(227, 79, 38, 0.2); --icon-hover: rgba(227, 79, 38, 0.6); }
-        .icon-css { --icon-color: #1572B6; --icon-shadow: rgba(21, 114, 182, 0.3); --icon-inset: rgba(21, 114, 182, 0.2); --icon-hover: rgba(21, 114, 182, 0.6); }
-        .icon-python { --icon-color: yellow; --icon-shadow: rgba(79, 192, 141, 0.3); --icon-inset: rgba(79, 192, 141, 0.2); --icon-hover: rgba(79, 192, 141, 0.6); }
-        .icon-figma { --icon-color: #F24E1E; --icon-shadow: rgba(242, 78, 30, 0.3); --icon-inset: rgba(242, 78, 30, 0.2); --icon-hover: rgba(242, 78, 30, 0.6); }
-        .icon-node { --icon-color: #339933; --icon-shadow: rgba(51, 153, 51, 0.3); --icon-inset: rgba(51, 153, 51, 0.2); --icon-hover: rgba(51, 153, 51, 0.6); }
-        .icon-bootstrap { --icon-color: #7952B3; --icon-shadow: rgba(121, 82, 179, 0.3); --icon-inset: rgba(121, 82, 179, 0.2); --icon-hover: rgba(121, 82, 179, 0.6); }
+        .icon-react {
+            --icon-color: #61DAFB;
+            --icon-shadow: rgba(97, 218, 251, 0.3);
+            --icon-inset: rgba(97, 218, 251, 0.2);
+            --icon-hover: rgba(97, 218, 251, 0.6);
+        }
+
+        .icon-js {
+            --icon-color: #F7DF1E;
+            --icon-shadow: rgba(247, 223, 30, 0.3);
+            --icon-inset: rgba(247, 223, 30, 0.2);
+            --icon-hover: rgba(247, 223, 30, 0.6);
+        }
+
+        .icon-html {
+            --icon-color: #E34F26;
+            --icon-shadow: rgba(227, 79, 38, 0.3);
+            --icon-inset: rgba(227, 79, 38, 0.2);
+            --icon-hover: rgba(227, 79, 38, 0.6);
+        }
+
+        .icon-css {
+            --icon-color: #1572B6;
+            --icon-shadow: rgba(21, 114, 182, 0.3);
+            --icon-inset: rgba(21, 114, 182, 0.2);
+            --icon-hover: rgba(21, 114, 182, 0.6);
+        }
+
+        .icon-python {
+            --icon-color: yellow;
+            --icon-shadow: rgba(79, 192, 141, 0.3);
+            --icon-inset: rgba(79, 192, 141, 0.2);
+            --icon-hover: rgba(79, 192, 141, 0.6);
+        }
+
+        .icon-figma {
+            --icon-color: #F24E1E;
+            --icon-shadow: rgba(242, 78, 30, 0.3);
+            --icon-inset: rgba(242, 78, 30, 0.2);
+            --icon-hover: rgba(242, 78, 30, 0.6);
+        }
+
+        .icon-node {
+            --icon-color: #339933;
+            --icon-shadow: rgba(51, 153, 51, 0.3);
+            --icon-inset: rgba(51, 153, 51, 0.2);
+            --icon-hover: rgba(51, 153, 51, 0.6);
+        }
+
+        .icon-bootstrap {
+            --icon-color: #7952B3;
+            --icon-shadow: rgba(121, 82, 179, 0.3);
+            --icon-inset: rgba(121, 82, 179, 0.2);
+            --icon-hover: rgba(121, 82, 179, 0.6);
+        }
 
         @keyframes spinOrbit {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         @keyframes counterSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(-360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
         }
 
         /* --- About Section --- */
@@ -340,23 +415,6 @@
             margin: 0 auto;
         }
 
-        .about-image {
-            flex: 1;
-            background: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border-color);
-            height: 460px;
-        }
-
-        .about-image img {
-            width: 120%;
-            height: 120%;
-            object-fit: cover;
-        }
 
         .about-text {
             flex: 1;
@@ -404,8 +462,8 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
             width: 100%;
             max-width: 1000px;
             margin: 0 auto;
@@ -437,6 +495,7 @@
             justify-content: center;
             gap: 15px;
             margin-bottom: 25px;
+            flex-wrap: wrap;
         }
 
         .skill-icon-item {
@@ -463,25 +522,81 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .icon-container.html { color: #E34F26; }
-        .icon-container.css { color: #1572B6; }
-        .icon-container.js { color: #F7DF1E; }
-        .icon-container.python { color: #FFD43B; }
-        .icon-container.flask { color: #ffffff; }
-        .icon-container.api { color: #4FC08D; }
-        .icon-container.sqlite { color: #54a6db; }
-        .icon-container.mysql { color: #F29111; }
-        .icon-container.git { color: #F05032; }
-        .icon-container.github { color: #ffffff; }
-        .icon-container.vscode { color: #007ACC; }
-        .icon-container.antigravity { color: #ff5722; }
-        .icon-container.codeblocks { color: #4caf50; }
-        .icon-container.vb { color: #0078d7; }
-        .icon-container.docker { color: #2496ed; }
-        .icon-container.windows { color: #0078d7; }
-        .icon-container.mac { color: #ffffff; }
-        .icon-container.kali { color: #557c94; }
-        .icon-container.ubuntu { color: #E95420; }
+        .icon-container.html {
+            color: #E34F26;
+        }
+
+        .icon-container.css {
+            color: #1572B6;
+        }
+
+        .icon-container.js {
+            color: #F7DF1E;
+        }
+
+        .icon-container.python {
+            color: #FFD43B;
+        }
+
+        .icon-container.flask {
+            color: #ffffff;
+        }
+
+        .icon-container.api {
+            color: #4FC08D;
+        }
+
+        .icon-container.sqlite {
+            color: #54a6db;
+        }
+
+        .icon-container.mysql {
+            color: #F29111;
+        }
+
+        .icon-container.git {
+            color: #F05032;
+        }
+
+        .icon-container.github {
+            color: #ffffff;
+        }
+
+        .icon-container.vscode {
+            color: #007ACC;
+        }
+
+        .icon-container.antigravity {
+            color: #ff5722;
+        }
+
+        .icon-container.codeblocks {
+            color: #4caf50;
+        }
+
+        .icon-container.vb {
+            color: #0078d7;
+        }
+
+        .icon-container.docker {
+            color: #2496ed;
+        }
+
+        .icon-container.windows {
+            color: #0078d7;
+        }
+
+        .icon-container.mac {
+            color: #ffffff;
+        }
+
+        .icon-container.kali {
+            color: #557c94;
+        }
+
+        .icon-container.ubuntu {
+            color: #E95420;
+        }
 
         .skill-icon-item span {
             font-size: 11px;
@@ -524,19 +639,57 @@
             transition: width 1s ease-in-out;
         }
 
-        .progress.html { background: #E34F26; }
-        .progress.css { background: #1572B6; }
-        .progress.js { background: #F7DF1E; }
-        .progress.python { background: #FFD43B; }
-        .progress.flask { background: #ffffff; }
-        .progress.sqlite { background: #54a6db; }
-        .progress.mysql { background: #F29111; }
-        .progress.git { background: #F05032; }
-        .progress.github { background: #ffffff; }
-        .progress.codeblocks { background: #4caf50; }
-        .progress.docker { background: #2496ed; }
-        .progress.windows { background: #0078d7; }
-        .progress.ubuntu { background: #E95420; }
+        .progress.html {
+            background: #E34F26;
+        }
+
+        .progress.css {
+            background: #1572B6;
+        }
+
+        .progress.js {
+            background: #F7DF1E;
+        }
+
+        .progress.python {
+            background: #FFD43B;
+        }
+
+        .progress.flask {
+            background: #ffffff;
+        }
+
+        .progress.sqlite {
+            background: #54a6db;
+        }
+
+        .progress.mysql {
+            background: #F29111;
+        }
+
+        .progress.git {
+            background: #F05032;
+        }
+
+        .progress.github {
+            background: #ffffff;
+        }
+
+        .progress.codeblocks {
+            background: #4caf50;
+        }
+
+        .progress.docker {
+            background: #2496ed;
+        }
+
+        .progress.windows {
+            background: #0078d7;
+        }
+
+        .progress.ubuntu {
+            background: #E95420;
+        }
 
         /* --- Projects Section --- */
         #projects {
@@ -545,8 +698,8 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
             width: 100%;
         }
 
@@ -570,7 +723,8 @@
             border-radius: 15px;
             object-fit: cover;
             margin-bottom: 20px;
-            background: #222; /* Placeholder for images */
+            background: #222;
+            /* Placeholder for images */
         }
 
         .project-card h3 {
@@ -671,7 +825,8 @@
             gap: 20px;
         }
 
-        .contact-form input, .contact-form textarea {
+        .contact-form input,
+        .contact-form textarea {
             width: 100%;
             padding: 15px;
             background: var(--card-bg);
@@ -688,7 +843,8 @@
             resize: none;
         }
 
-        .contact-form input:focus, .contact-form textarea:focus {
+        .contact-form input:focus,
+        .contact-form textarea:focus {
             border-color: var(--primary-red);
             box-shadow: 0 0 10px rgba(255, 0, 51, 0.2);
         }
@@ -700,8 +856,8 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
             width: 100%;
             max-width: 1000px;
             margin: 0 auto;
@@ -747,8 +903,8 @@
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
             width: 100%;
             max-width: 1000px;
             margin: 0 auto;
@@ -957,26 +1113,28 @@
 
         /* Responsive Design */
         @media (max-width: 900px) {
-            #home, .about-content, .contact-container {
+
+            #home,
+            .about-content,
+            .contact-container {
                 flex-direction: column;
                 text-align: center;
             }
+
             .hero-buttons {
                 justify-content: center;
             }
+
             .hero-text p {
                 margin: 0 auto 30px auto;
             }
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none; /* In a real project, add a hamburger menu here */
-            }
+
             .hero-image {
-                transform: translateX(0); /* Remove desktop offset */
+                transform: translateX(0);
+                /* Remove desktop offset */
                 margin-top: 40px;
             }
+
             .contact-socials {
                 justify-content: center;
             }
@@ -986,25 +1144,36 @@
             section {
                 padding: 80px 5%;
             }
+
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
             .hero-text h1 {
                 font-size: 38px;
             }
+
             .hero-text h2 {
                 font-size: 24px;
             }
+
             .main-avatar {
                 width: 200px;
                 height: 200px;
             }
+
             .orbit {
                 width: 220px;
                 height: 220px;
                 margin-top: -110px;
                 margin-left: -110px;
             }
+
             .icon-pos {
                 transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-135px);
             }
+
             .floating-icon {
                 width: 35px;
                 height: 35px;
@@ -1014,48 +1183,87 @@
 
         @media (max-width: 480px) {
             section {
-                padding: 60px 5%;
+                padding: 60px 4%;
             }
+
             .tubelight-navbar {
-                width: 90%;
+                width: 95%;
+                border-radius: 9999px;
             }
+
+            .nav-pill-container {
+                width: 100%;
+                justify-content: space-evenly;
+                padding: 6px 8px;
+            }
+
             .nav-item {
-                padding: 8px 12px;
+                padding: 6px 12px;
+                font-size: 18px;
+                /* For icons */
             }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
             .hero-text h1 {
                 font-size: 32px;
             }
+
             .hero-text h2 {
                 font-size: 20px;
             }
+
             .hero-buttons {
                 flex-direction: column;
                 gap: 15px;
             }
+
             .main-avatar {
                 width: 160px;
                 height: 160px;
             }
+
             .orbit {
                 width: 180px;
                 height: 180px;
                 margin-top: -90px;
                 margin-left: -90px;
             }
+
             .icon-pos {
                 transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-110px);
             }
-            .about-image {
-                height: 300px;
-            }
-            .skills-grid, .services-grid, .certifications-grid, .projects-grid {
+
+            .skills-grid,
+            .services-grid,
+            .certifications-grid,
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
+
             .project-img {
                 height: 180px;
             }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .project-links a,
+            .project-links button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 12px;
+            }
         }
-        
+
         /* --- Scroll Reveal Animations --- */
         .reveal {
             opacity: 0;
