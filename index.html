@@ -642,6 +642,31 @@
         </div>
     </div>
 
+    <!-- Chatbot UI -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chatbot-window" class="chatbot-window hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="bot-avatar" style="display: flex; justify-content: center; align-items: center; font-size: 20px; background: rgba(255, 255, 255, 0.1);">⚜️</div>
+                    <span>AI-Bot</span>
+                </div>
+                <button id="close-chat" class="close-chat-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <div class="message bot-message">
+                    <p>Hi there! I'm Lucky's AI assistant. How can I help you today?</p>
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+                <button id="send-chat" class="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button id="chatbot-toggle" class="chatbot-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="Go to top">
         <i class="fas fa-arrow-up"></i>

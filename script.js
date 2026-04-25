@@ -293,3 +293,116 @@ if (contactForm) {
         });
     }
 }
+
+// --- Chatbot Logic ---
+const chatbotToggle = document.getElementById('chatbot-toggle');
+const chatbotWindow = document.getElementById('chatbot-window');
+const closeChatBtn = document.getElementById('close-chat');
+const chatInput = document.getElementById('chat-input');
+const sendChatBtn = document.getElementById('send-chat');
+const chatbotMessages = document.getElementById('chatbot-messages');
+
+let chatHistory = [];
+
+// Toggle Chat Window
+if (chatbotToggle) {
+    chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.classList.toggle('hidden');
+        if (!chatbotWindow.classList.contains('hidden')) {
+            chatInput.focus();
+        }
+    });
+}
+
+// Close Chat Window
+if (closeChatBtn) {
+    closeChatBtn.addEventListener('click', () => {
+        chatbotWindow.classList.add('hidden');
+    });
+}
+
+// Append Message to UI
+function appendMessage(sender, text) {
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message');
+    if (sender === 'user') {
+        messageDiv.classList.add('user-message');
+    } else if (sender === 'model') {
+        messageDiv.classList.add('bot-message');
+    } else {
+        messageDiv.classList.add('typing-indicator'); // For typing indicator
+    }
+    
+    // Convert basic markdown (like bolding **) to HTML
+    let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    // Convert newlines to <br>
+    formattedText = formattedText.replace(/\n/g, '<br>');
+    
+    messageDiv.innerHTML = formattedText;
+    chatbotMessages.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    return messageDiv;
+}
+
+// Show/Hide Typing Indicator
+function showTypingIndicator() {
+    return appendMessage('typing', 'AI-Bot is typing...');
+}
+
+// Send Message
+async function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    // Add user message to UI and history
+    appendMessage('user', text);
+    chatHistory.push({ sender: 'user', text: text });
+    chatInput.value = '';
+
+    const typingIndicator = showTypingIndicator();
+
+    try {
+        // Send request to Flask backend
+        const response = await fetch('http://127.0.0.1:5000/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: text,
+                history: chatHistory.slice(0, -1) // Send history excluding the current message
+            })
+        });
+
+        // Remove typing indicator
+        typingIndicator.remove();
+
+        if (response.ok) {
+            const data = await response.json();
+            appendMessage('model', data.reply);
+            chatHistory.push({ sender: 'model', text: data.reply });
+        } else {
+            const errData = await response.json();
+            appendMessage('model', `Error: ${errData.error || 'Failed to connect to backend.'}`);
+        }
+    } catch (error) {
+        typingIndicator.remove();
+        console.error('Chat API Error:', error);
+        appendMessage('model', 'Sorry, I am having trouble connecting to my server right now. Make sure the Flask backend is running!');
+    }
+}
+
+// Event Listeners for sending message
+if (sendChatBtn) {
+    sendChatBtn.addEventListener('click', sendMessage);
+}
+
+if (chatInput) {
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+}
