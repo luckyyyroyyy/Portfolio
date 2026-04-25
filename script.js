@@ -365,7 +365,7 @@ async function sendMessage() {
 
     try {
         // Send request to Flask backend
-        const response = await fetch('http://127.0.0.1:5000/api/chat', {
+        const response = await fetch('https://lucky-portfolio-backend.onrender.com/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
