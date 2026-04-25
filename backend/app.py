@@ -72,7 +72,7 @@ def chat():
 
     except Exception as e:
         print(f"Error: {e}")
-        return jsonify({'error': 'Failed to process request. Please check API key and try again.'}), 500
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     # Run the Flask app on port 5000
