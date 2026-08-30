@@ -1,16 +1,16 @@
 # 🌐 Personal Portfolio Website
 
-This is my personal portfolio website created to showcase my projects, technical skills, and contact information. The portfolio highlights my work as a Full-Stack Developer specializing in Python and modern web applications.
+This is my personal portfolio website created to showcase my projects, technical skills, certifications, and contact information. The portfolio highlights my journey and work as a BCA Graduate and Full-Stack Developer specializing in Python, Flask, cloud computing, and modern web applications.
 
 ## 🚀 Features
 
-- Responsive portfolio design
-- About me section detailing my background
-- Skills and technologies section with progress bars
-- Projects showcase (Expense Tracker, Skill Swap Pro, Weather App, etc.)
-- Contact section
-- Clean and modern user interface
-- **[NEW] AI-Bot Integration:** A custom Gemini-powered AI chatbot assistant capable of answering questions about my portfolio, experience, and skills in real-time.
+- Responsive portfolio design with a custom tubelight floating navigation bar
+- About me section detailing background, education, and career focus
+- Skills and technologies section with animated progress bars and interactive categories
+- Projects showcase (Expense Tracker Pro, Skill Swap Pro, Student Management System, Weather App, etc.)
+- Certifications & achievements modal viewer (supporting interactive PDFs and images)
+- Integrated Web3Forms contact section with real-time field validation
+- **AI-Bot Integration:** Custom Gemini-powered AI chatbot assistant capable of answering questions about my background, skills, and projects in real-time.
 
 ## 🛠️ Technologies Used
 

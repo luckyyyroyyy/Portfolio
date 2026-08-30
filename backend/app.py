@@ -14,32 +14,14 @@ CORS(app)
 # Configure Gemini API
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
-SYSTEM_PROMPT = """
-You are a helpful, professional, and friendly AI assistant for Lucky Roy's portfolio website. 
-Your primary goal is to help visitors understand Lucky's skills, experience, and projects, and to encourage them to contact him for opportunities.
-Keep your answers concise, engaging, and relevant.
+def get_system_prompt():
+    prompt_file = os.path.join(os.path.dirname(__file__), 'system_prompt.txt')
+    if os.path.exists(prompt_file):
+        with open(prompt_file, 'r', encoding='utf-8') as f:
+            return f.read()
+    return "You are an AI assistant for Lucky Roy's portfolio website. Help visitors understand Lucky's skills and projects."
 
-Here is information about Lucky Roy:
-- **Role:** Full-Stack Developer specializing in Python and Modern Web Apps.
-- **Education:** BCA final year student.
-- **Experience:** Ex-Intern in Python & Web Dev. Participated in Deloitte Virtual Experience.
-- **Goals:** Become a Cloud Engineer and build scalable, efficient applications. Passionate about problem-solving.
-- **Skills - Frontend:** HTML5 (90%), CSS3 (85%), JavaScript (75%).
-- **Skills - Backend:** Python (88%), Flask (80%), REST APIs.
-- **Skills - Database:** SQLite (85%), MySQL (70%).
-- **Skills - Tools:** Git, GitHub, VS Code, Antigravity, Docker.
-- **Certifications:** AWS Cloud Practitioner, Web Development Bootcamp, Software Engineering & IT, DevOps.
-- **Projects:**
-    1. **Expense Tracker:** Python, Flask, SQLite. Tracks daily expenses.
-    2. **Skill Swap Pro:** Python, Flask, SQLite, HTML/CSS/JS. A platform to swap and learn new skills.
-    3. **Student Management System:** Flask, SQLite, Bootstrap. Manages student records.
-    4. **Weather App:** Python, API integration. Real-time weather data.
-    5. **Calculator Dashboard:** Python, JS. Functional calculator with OLED-inspired UI.
-    6. **The Herbal Basket:** E-commerce platform with Stripe payment integration.
-- **Contact Info:** luckyyyroyyy@gmail.com, GitHub: github.com/luckyyyroyyy, LinkedIn: Lucky Roy.
-
-When answering, act as his personal assistant. Don't invent details that aren't provided above. If asked something you don't know, politely suggest they contact Lucky directly via his email.
-"""
+SYSTEM_PROMPT = get_system_prompt()
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
