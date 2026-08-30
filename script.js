@@ -1,7 +1,65 @@
-// --- Tubelight Navbar Logic ---
+// --- Tubelight & Side Navigation Logic ---
 const navItems = document.querySelectorAll('.nav-item');
+const sidebarItems = document.querySelectorAll('.sidebar-item');
 const navLamp = document.getElementById('navLamp');
 const sections = document.querySelectorAll('section');
+
+const sidebarToggle = document.getElementById('sidebarToggle');
+const sidebarNav = document.getElementById('sidebarNav');
+const closeSidebar = document.getElementById('closeSidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+function openSidebarDrawer() {
+    if (sidebarNav && sidebarOverlay && sidebarToggle) {
+        sidebarNav.classList.add('active');
+        sidebarOverlay.classList.add('active');
+        sidebarToggle.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeSidebarDrawer() {
+    if (sidebarNav && sidebarOverlay && sidebarToggle) {
+        sidebarNav.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+        sidebarToggle.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', () => {
+        if (sidebarNav && sidebarNav.classList.contains('active')) {
+            closeSidebarDrawer();
+        } else {
+            openSidebarDrawer();
+        }
+    });
+}
+
+if (closeSidebar) {
+    closeSidebar.addEventListener('click', closeSidebarDrawer);
+}
+
+if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', closeSidebarDrawer);
+}
+
+// Close drawer on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidebarNav && sidebarNav.classList.contains('active')) {
+        closeSidebarDrawer();
+    }
+});
+
+// Close sidebar on link click
+sidebarItems.forEach(item => {
+    item.addEventListener('click', function () {
+        sidebarItems.forEach(s => s.classList.remove('active'));
+        this.classList.add('active');
+        closeSidebarDrawer();
+    });
+});
 
 function updateLampPosition(activeItem) {
     if (!activeItem || !navLamp) return;
@@ -13,7 +71,7 @@ function updateLampPosition(activeItem) {
     const width = itemRect.width;
 
     navLamp.style.width = `${width}px`;
-    navLamp.style.transform = `translateX(${left}px)`; // Using transform for smoother animation than left
+    navLamp.style.transform = `translateX(${left}px)`;
 }
 
 // Initialize lamp position on load
@@ -28,23 +86,20 @@ window.addEventListener('resize', () => {
     updateLampPosition(activeItem);
 });
 
-// Handle click events (for smooth scroll, the href handles navigation, we just update UI)
+// Handle click events for tubelight navbar
 navItems.forEach(item => {
     item.addEventListener('click', function (e) {
-        // Remove active from all
         navItems.forEach(n => n.classList.remove('active'));
-        // Add active to clicked
         this.classList.add('active');
         updateLampPosition(this);
     });
 });
 
-// Update active nav link and lamp position strictly on scroll
+// Update active nav link, sidebar item, and lamp position strictly on scroll
 window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        // Add an offset so it triggers slightly before hitting the exact top
         if (scrollY >= sectionTop - 150) {
             current = section.getAttribute('id');
         }
@@ -55,6 +110,13 @@ window.addEventListener('scroll', () => {
         if (item.getAttribute('data-target') === current) {
             item.classList.add('active');
             updateLampPosition(item);
+        }
+    });
+
+    sidebarItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('data-target') === current) {
+            item.classList.add('active');
         }
     });
 });
@@ -84,47 +146,47 @@ revealElements.forEach(element => {
 
 // --- Project Modals Logic ---
 const projectsData = {
+    'skill-swap': {
+        title: 'SkillSwap Pro',
+        desc: 'A full-stack skill-sharing platform connecting users based on skills they offer and want to learn. Features user authentication, profile management, automated skill matching, real-time user communication using Flask-SocketIO, gamification (XP, levels, badges, reputation), and review systems for building trust.',
+        img: 'images/skillswap.webp',
+        tech: ['Python', 'Flask', 'SQLite', 'Flask-SocketIO', 'JavaScript', 'Tailwind CSS', 'Jinja2'],
+        github: 'https://github.com/luckyyyroyyy/Skill-Swap.git'
+    },
     'expense-tracker': {
-        title: 'Expense Tracker Web App',
-        desc: 'A comprehensive web application designed to help users track their daily expenses and manage personal finances efficiently. It features a clean dashboard, expense categorization, and detailed reporting.',
+        title: 'ExpenseOrbit',
+        desc: 'A full-stack personal finance application for managing expenses, income, budgets, subscriptions, and savings goals. Features automatic merchant-based expense categorization, receipt data extraction with Tesseract OCR, visual spending charts with Matplotlib, PDF exports, and Progressive Web App (PWA) offline support with background sync.',
         img: 'images/expenses tracker.webp',
-        tech: ['Python', 'Flask', 'SQLite', 'HTML/CSS', 'JavaScript'],
+        tech: ['Python', 'Flask', 'SQLite', 'JavaScript', 'HTML5', 'CSS3', 'PWA', 'Tesseract OCR', 'Matplotlib'],
         github: 'https://github.com/luckyyyroyyy/Expense-tracker-pro.git'
     },
-    'skill-swap': {
-        title: 'Skill Swap Pro',
-        desc: 'An innovative platform where users can connect to swap and mutually learn new skills. Features include user profiles, skill matching algorithms, real-time messaging, and review systems.',
-        img: 'images/skillswap.webp',
-        tech: ['Python', 'Flask', 'SQLite', 'HTML', 'CSS', 'JavaScript'],
-        github: 'https://github.com/luckyyyroyyy/Skill-Swap.git'
+    'herbal-basket': {
+        title: 'The Herbal Basket',
+        desc: 'A full-featured e-commerce platform for herbal and organic products. Includes a shopping cart, secure checkout process integrated with Stripe API, inventory management, and an admin dashboard.',
+        img: 'images/herbal.webp',
+        tech: ['Python', 'Flask', 'SQLite', 'Stripe API', 'HTML5', 'CSS3', 'JavaScript'],
+        github: 'https://github.com/luckyyyroyyy?tab=repositories'
     },
     'student-management': {
         title: 'Student Management System',
-        desc: 'A robust web application built for educational institutions to manage student records, track attendance, handle grading, and generate academic reports seamlessly.',
+        desc: 'A robust web application built for educational institutions to manage student records, track attendance, handle grading workflows, and generate academic performance reports seamlessly.',
         img: 'images/stumangsys.webp',
-        tech: ['Python', 'Flask', 'SQLite', 'HTML', 'CSS', 'Bootstrap'],
+        tech: ['Python', 'Flask', 'SQLite', 'HTML5', 'CSS3', 'Bootstrap'],
         github: 'https://github.com/luckyyyroyyy/Student-management-system.git'
     },
     'weather-app': {
         title: 'Weather App',
-        desc: 'A dynamic weather application that provides real-time atmospheric data, forecasts, and interactive weather maps by integrating with external RESTful weather APIs.',
+        desc: 'A dynamic weather application that provides real-time atmospheric data, multi-day forecasts, and interactive weather visualizations by integrating with external RESTful weather APIs.',
         img: 'images/weather.webp',
-        tech: ['Python', 'Flask', 'OpenWeatherMap API', 'JavaScript', 'CSS'],
+        tech: ['Python', 'Flask', 'OpenWeatherMap API', 'JavaScript', 'CSS3'],
         github: 'https://github.com/luckyyyroyyy/weather-app-api.git'
     },
     'calculator': {
         title: 'Calculator Dashboard',
         desc: 'A highly functional and responsive calculator utility application designed for quick mathematical operations with advanced features and a modern OLED-inspired user interface.',
         img: 'images/calculator.webp',
-        tech: ['HTML', 'CSS', 'JavaScript', 'Python (Backend utility)'],
+        tech: ['JavaScript', 'HTML5', 'CSS3', 'Python (Backend utility)'],
         github: 'https://github.com/luckyyyroyyy/Calculator--python.git'
-    },
-    'herbal-basket': {
-        title: 'The Herbal Basket',
-        desc: 'A full-featured e-commerce platform for herbal and organic products. Includes a shopping cart, secure checkout process integrated with Stripe API, and an admin dashboard.',
-        img: 'images/herbal.webp',
-        tech: ['Python', 'Flask', 'SQLite', 'Stripe API', 'HTML/CSS/JS'],
-        github: 'https://github.com/luckyyyroyyy?tab=repositories'
     }
 };
 
@@ -158,10 +220,20 @@ projectCards.forEach(card => {
                     'Python': '#FFD43B',
                     'Flask': '#ffffff',
                     'SQLite': '#54a6db',
+                    'SocketIO': '#54a6db',
+                    'Tailwind': '#06B6D4',
+                    'Jinja': '#B41717',
+                    'Tesseract': '#4CAF50',
+                    'Matplotlib': '#11557c',
+                    'PWA': '#F7DF1E',
+                    'React': '#61DAFB',
                     'HTML': '#E34F26',
                     'CSS': '#1572B6',
                     'JavaScript': '#F7DF1E',
-                    'Stripe API': '#635bff'
+                    'PHP': '#777BB4',
+                    'Stripe': '#635bff',
+                    'Bootstrap': '#7952B3',
+                    'API': '#4FC08D'
                 };
 
                 data.tech.forEach(tech => {
@@ -171,7 +243,10 @@ projectCards.forEach(card => {
                     // Find base color key or default white
                     let color = '#ddd';
                     for (const key in techColors) {
-                        if (tech.includes(key)) color = techColors[key];
+                        if (tech.toLowerCase().includes(key.toLowerCase())) {
+                            color = techColors[key];
+                            break;
+                        }
                     }
                     span.style.color = color;
                     modalTech.appendChild(span);
@@ -201,11 +276,21 @@ modalOverlay.addEventListener('click', (e) => {
 
 // --- View Resume Button Logic ---
 const viewResumeBtn = document.getElementById('viewResumeBtn');
+const sidebarResumeBtn = document.getElementById('sidebarResumeBtn');
+
+function openResume() {
+    const resumeUrl = 'resume.pdf';
+    window.open(resumeUrl, '_blank');
+}
+
 if (viewResumeBtn) {
-    viewResumeBtn.addEventListener('click', () => {
-        // Update the resumeUrl to your resume file path or external link
-        const resumeUrl = 'resume.pdf'; // Change this to your resume path or URL
-        window.open(resumeUrl, '_blank');
+    viewResumeBtn.addEventListener('click', openResume);
+}
+
+if (sidebarResumeBtn) {
+    sidebarResumeBtn.addEventListener('click', () => {
+        closeSidebarDrawer();
+        openResume();
     });
 }
 

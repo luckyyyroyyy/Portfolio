@@ -5,24 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Primary Meta Tags -->
-    <title>Lucky Roy | Full-Stack Developer</title>
+    <title>Lucky Roy M | Web Developer & Graphic Designer | Full-Stack Developer</title>
     <meta name="description"
-        content="Portfolio of Lucky Roy, a full-stack developer specializing in Python, Flask, and modern web applications.">
+        content="Portfolio of Lucky Roy M, a Web Developer, Graphic Designer, and Full-Stack Developer skilled in React.js, Python, Flask, JavaScript, and modern web applications.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://luckyyyroyyy.github.io/">
-    <meta property="og:title" content="Lucky Roy | Full-Stack Developer">
+    <meta property="og:title" content="Lucky Roy M | Web Developer & Graphic Designer | Full-Stack Developer">
     <meta property="og:description"
-        content="Portfolio of Lucky Roy, a full-stack developer specializing in Python, Flask, and modern web applications.">
+        content="Portfolio of Lucky Roy M, a Web Developer, Graphic Designer, and Full-Stack Developer skilled in React.js, Python, Flask, JavaScript, and modern web applications.">
     <meta property="og:image" content="images/avatar.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://luckyyyroyyy.github.io/">
-    <meta name="twitter:title" content="Lucky Roy | Full-Stack Developer">
+    <meta name="twitter:title" content="Lucky Roy M | Web Developer & Graphic Designer | Full-Stack Developer">
     <meta name="twitter:description"
-        content="Portfolio of Lucky Roy, a full-stack developer specializing in Python, Flask, and modern web applications.">
+        content="Portfolio of Lucky Roy M, a Web Developer, Graphic Designer, and Full-Stack Developer skilled in React.js, Python, Flask, JavaScript, and modern web applications.">
     <meta name="twitter:image" content="images/avatar.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -32,6 +32,81 @@
 </head>
 
 <body>
+
+    <!-- Side Navigation Menu Toggle -->
+    <button id="sidebarToggle" class="sidebar-toggle" aria-label="Toggle navigation menu" title="Open Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </span>
+    </button>
+
+    <!-- Side Navigation Drawer -->
+    <aside id="sidebarNav" class="sidebar-nav">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <span class="brand-icon">⚜️</span>
+                <div class="brand-text">
+                    <h4>Lucky Roy M</h4>
+                    <p>Web Developer & Designer</p>
+                </div>
+            </div>
+            <button id="closeSidebar" class="close-sidebar-btn" aria-label="Close navigation menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-links">
+            <a href="#home" class="sidebar-item active" data-target="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#about" class="sidebar-item" data-target="about">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+            <a href="#experience" class="sidebar-item" data-target="experience">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="#skills" class="sidebar-item" data-target="skills">
+                <i class="fas fa-code"></i>
+                <span>Technical Skills</span>
+            </a>
+            <a href="#projects" class="sidebar-item" data-target="projects">
+                <i class="fas fa-laptop-code"></i>
+                <span>Featured Projects</span>
+            </a>
+            <a href="#education" class="sidebar-item" data-target="education">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Education</span>
+            </a>
+            <a href="#certifications" class="sidebar-item" data-target="certifications">
+                <i class="fas fa-certificate"></i>
+                <span>Certifications</span>
+            </a>
+            <a href="#contact" class="sidebar-item" data-target="contact">
+                <i class="fas fa-envelope"></i>
+                <span>Get In Touch</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button id="sidebarResumeBtn" class="btn btn-primary sidebar-resume-btn">
+                <i class="fas fa-file-pdf"></i> View Resume
+            </button>
+            <div class="sidebar-socials">
+                <a href="https://github.com/luckyyyroyyy" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/luckyyyroyyy/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:luckyyyroyyy@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+916360164066" title="Call"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
     <nav class="tubelight-navbar">
         <div class="nav-pill-container">
@@ -43,13 +118,25 @@
                 <span class="nav-text">About</span>
                 <span class="nav-icon"><i class="fas fa-user"></i></span>
             </a>
+            <a href="#experience" class="nav-item" data-target="experience">
+                <span class="nav-text">Experience</span>
+                <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+            </a>
             <a href="#skills" class="nav-item" data-target="skills">
                 <span class="nav-text">Skills</span>
                 <span class="nav-icon"><i class="fas fa-code"></i></span>
             </a>
             <a href="#projects" class="nav-item" data-target="projects">
                 <span class="nav-text">Projects</span>
-                <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+                <span class="nav-icon"><i class="fas fa-laptop-code"></i></span>
+            </a>
+            <a href="#education" class="nav-item" data-target="education">
+                <span class="nav-text">Education</span>
+                <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
+            </a>
+            <a href="#certifications" class="nav-item" data-target="certifications">
+                <span class="nav-text">Certifications</span>
+                <span class="nav-icon"><i class="fas fa-certificate"></i></span>
             </a>
             <a href="#contact" class="nav-item" data-target="contact">
                 <span class="nav-text">Contact</span>
@@ -65,9 +152,9 @@
 
     <section id="home">
         <div class="hero-text">
-            <h1>Hi, I'm Lucky Roy</h1>
-            <h2>Full-Stack Developer Specializing in Python & Modern Web Apps</h2>
-            <p>BCA graduate and developer driven by a passion for creating robust, scalable applications. Actively seeking opportunities to build impactful software, bridging the gap between elegant user interfaces and powerful backend architectures.</p>
+            <h1>Hi, I'm Lucky Roy M</h1>
+            <h2>Web Developer & Graphic Designer | Full-Stack Developer</h2>
+            <p>BCA graduate with hands-on experience in web development, software projects, and professional internships. Skilled in React.js, Python, Flask, JavaScript, responsive web design, performance optimization, and creating user-focused digital solutions.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <button id="viewResumeBtn" class="btn btn-outline">View Resume</button>
@@ -80,42 +167,42 @@
             <div class="orbit">
                 <div class="icon-pos" style="--angle: 0deg;">
                     <div class="icon-counter-spin">
-                        <div class="floating-icon icon-react"><i class="fab fa-react"></i></div>
+                        <div class="floating-icon icon-react" title="React.js"><i class="fab fa-react"></i></div>
                     </div>
                 </div>
                 <div class="icon-pos" style="--angle: 45deg;">
                     <div class="icon-counter-spin">
-                        <div class="floating-icon icon-js"><i class="fab fa-js"></i></div>
+                        <div class="floating-icon icon-js" title="JavaScript"><i class="fab fa-js"></i></div>
                     </div>
                 </div>
                 <div class="icon-pos" style="--angle: 90deg;">
                     <div class="icon-counter-spin">
-                        <div class="floating-icon icon-html"><i class="fab fa-html5"></i></div>
+                        <div class="floating-icon icon-html" title="HTML5"><i class="fab fa-html5"></i></div>
                     </div>
                 </div>
                 <div class="icon-pos" style="--angle: 135deg;">
                     <div class="icon-counter-spin">
-                        <div class="floating-icon icon-css"><i class="fab fa-css3-alt"></i></div>
+                        <div class="floating-icon icon-css" title="CSS3"><i class="fab fa-css3-alt"></i></div>
                     </div>
                 </div>
                 <div class="icon-pos" style="--angle: 180deg;">
                     <div class="icon-counter-spin">
-                        <div class="floating-icon icon-vue"><i class="fab fa-vuejs"></i></div>
+                        <div class="floating-icon icon-figma" title="Figma"><i class="fab fa-figma"></i></div>
                     </div>
                 </div>
                 <div class="icon-pos" style="--angle: 225deg;">
                     <div class="icon-counter-spin">
-                        <div class="floating-icon icon-python"><i class="fab fa-python"></i></div>
+                        <div class="floating-icon icon-python" title="Python"><i class="fab fa-python"></i></div>
                     </div>
                 </div>
                 <div class="icon-pos" style="--angle: 270deg;">
                     <div class="icon-counter-spin">
-                        <div class="floating-icon icon-node"><i class="fab fa-node-js"></i></div>
+                        <div class="floating-icon icon-tailwind" title="Tailwind CSS"><i class="fas fa-wind"></i></div>
                     </div>
                 </div>
                 <div class="icon-pos" style="--angle: 315deg;">
                     <div class="icon-counter-spin">
-                        <div class="floating-icon icon-bootstrap"><i class="fab fa-bootstrap"></i></div>
+                        <div class="floating-icon icon-git" title="Git"><i class="fab fa-git-alt"></i></div>
                     </div>
                 </div>
             </div>
@@ -127,37 +214,154 @@
         <div class="about-content">
 
             <div class="about-text">
-                <p>Hi! I'm Lucky Roy, a BCA graduate passionate about full-stack web development and cloud computing. I enjoy building real-world applications, solving complex problems, and continuously expanding my technical skill set.</p>
-                <p>I have solid hands-on experience with Python, Flask, HTML, CSS, JavaScript, and database systems like SQLite and MySQL. I have developed impactful projects including SkillSwap Pro—a skill-exchange platform with real-time chat functionality—and a comprehensive Expense Tracking System.</p>
-                <p>Currently, I am advancing my backend engineering and exploring cloud technologies such as AWS and Docker. My goal is to build scalable, high-performance web applications and cloud solutions that deliver seamless user experiences.</p>
+                <p>Hi! I'm <strong>Lucky Roy M</strong>, a BCA graduate and Web Developer & Graphic Designer with hands-on experience in web development, software projects, and professional internships based in Bangalore, Karnataka.</p>
+                <p>Skilled in programming, frontend and backend development, relational databases, responsive web design, and software development tools. Experienced in developing practical applications and websites, debugging and improving existing solutions, working with version control, and creating user-focused digital solutions across e-commerce, healthcare, astrology, and business domains.</p>
+                <p>Adaptable, quick to learn, and interested in opportunities across software development, web development, IT, and related technology roles. Currently developing high-performance web applications and branding assets at PM Techno Solutions.</p>
+
+                <!-- Core Strengths -->
+                <div class="strengths-wrapper">
+                    <h3 class="strengths-title"><i class="fas fa-bolt" style="color: var(--primary-red);"></i> Core Strengths</h3>
+                    <div class="strengths-grid">
+                        <div class="strength-pill">
+                            <i class="fas fa-screwdriver-wrench"></i>
+                            <span>Strong problem-solving & debugging skills</span>
+                        </div>
+                        <div class="strength-pill">
+                            <i class="fas fa-brain"></i>
+                            <span>Quick learner with a growth mindset</span>
+                        </div>
+                        <div class="strength-pill">
+                            <i class="fas fa-mobile-screen-button"></i>
+                            <span>Ability to develop responsive & user-focused apps</span>
+                        </div>
+                        <div class="strength-pill">
+                            <i class="fas fa-layer-group"></i>
+                            <span>Strong interest in modern full-stack technologies</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="stats-grid">
                 <div class="stat-box">
+                    <h3>Current Role</h3>
+                    <p style="font-weight: 600; color: var(--text-main); margin-bottom: 4px;">Web Developer & Graphic Designer</p>
+                    <p style="color: var(--text-muted);">PM Techno Solutions (May 2026 – Present)</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Internship</h3>
+                    <p style="font-weight: 600; color: var(--text-main); margin-bottom: 4px;">Web Development Intern</p>
+                    <p style="color: var(--text-muted);">VM Technology & Financial Services (VMTFS)</p>
+                </div>
+                <div class="stat-box">
                     <h3>Education</h3>
-                    <p>Graduate</p>
-                    <p>BCA (Computer Applications)</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Experience</h3>
-                    <p>Software Dev Intern</p>
-                    <p>Python & Web Dev</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Focus</h3>
-                    <p>Full-Stack & Cloud</p>
-                    <p>Python, AWS & Web Apps</p>
+                    <p style="font-weight: 600; color: var(--text-main); margin-bottom: 4px;">BCA (Computer Applications)</p>
+                    <p style="color: var(--text-muted);">Sir M Visvesvaraya Degree College</p>
+                    <p style="color: var(--primary-red); font-weight: 600; font-size: 13px; margin-top: 4px;">CGPA: 8.94 | SGPA: 8.98</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="reveal">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-grid">
+
+            <!-- PM Techno Solutions -->
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-title-group">
+                        <h3><i class="fas fa-briefcase" style="color: var(--primary-red);"></i> Web Developer & Graphic Designer</h3>
+                        <div class="company">
+                            <span>PM Techno Solutions</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</span>
+                        </div>
+                    </div>
+                    <span class="exp-date-badge">
+                        <i class="fas fa-calendar-check"></i> May 2026 – Present
+                    </span>
+                </div>
+
+                <ul class="exp-bullets">
+                    <li><i class="fas fa-check-circle"></i> Develop and maintain responsive websites using React.js, JavaScript, HTML, CSS, and modern frontend development practices.</li>
+                    <li><i class="fas fa-check-circle"></i> Work on websites across e-commerce, healthcare, astrology, and business domains.</li>
+                    <li><i class="fas fa-check-circle"></i> Develop responsive user interfaces optimized for desktop, tablet, and mobile devices.</li>
+                    <li><i class="fas fa-check-circle"></i> Improve website performance through image optimization, WebP conversion, asset optimization, and frontend improvements.</li>
+                    <li><i class="fas fa-check-circle"></i> Analyze and improve page-speed performance using practical frontend optimization techniques.</li>
+                    <li><i class="fas fa-check-circle"></i> Use Git and GitHub for version control, collaboration, code updates, and deployment workflows.</li>
+                    <li><i class="fas fa-check-circle"></i> Create and modify website graphics, banners, layouts, branding assets, and other digital content.</li>
+                </ul>
+
+                <div class="exp-tags">
+                    <span class="tech-pill" style="color: #61DAFB;">React.js</span>
+                    <span class="tech-pill" style="color: #F7DF1E;">JavaScript</span>
+                    <span class="tech-pill" style="color: #E34F26;">HTML5</span>
+                    <span class="tech-pill" style="color: #1572B6;">CSS3</span>
+                    <span class="tech-pill" style="color: #10B981;">Performance Optimization</span>
+                    <span class="tech-pill" style="color: #F05032;">Git & GitHub</span>
+                    <span class="tech-pill" style="color: #EC4899;">UI/UX</span>
+                    <span class="tech-pill" style="color: #F24E1E;">Graphic Design</span>
+                </div>
+            </div>
+
+            <!-- VM Technology and Financial Services -->
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-title-group">
+                        <h3><i class="fas fa-laptop-code" style="color: #54a6db;"></i> Web Development Intern</h3>
+                        <div class="company">
+                            <span>VM Technology and Financial Services (VMTFS)</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Bengaluru</span>
+                        </div>
+                    </div>
+                    <span class="exp-date-badge intern">
+                        <i class="fas fa-calendar-alt"></i> Jan 2026
+                    </span>
+                </div>
+
+                <ul class="exp-bullets">
+                    <li><i class="fas fa-check-circle" style="color: #54a6db;"></i> Developed a responsive company website using HTML, CSS, JavaScript, and PHP.</li>
+                    <li><i class="fas fa-check-circle" style="color: #54a6db;"></i> Designed an attractive and professional user interface for the company’s online presence.</li>
+                    <li><i class="fas fa-check-circle" style="color: #54a6db;"></i> Developed a functional daily tracking dashboard for internal activity and progress tracking.</li>
+                    <li><i class="fas fa-check-circle" style="color: #54a6db;"></i> Implemented responsive layouts to ensure usability across desktop, tablet, and mobile devices.</li>
+                    <li><i class="fas fa-check-circle" style="color: #54a6db;"></i> Worked on website structure, styling, functionality, debugging, and overall user experience.</li>
+                </ul>
+
+                <div class="exp-tags">
+                    <span class="tech-pill" style="color: #777BB4;">PHP</span>
+                    <span class="tech-pill" style="color: #F7DF1E;">JavaScript</span>
+                    <span class="tech-pill" style="color: #E34F26;">HTML5</span>
+                    <span class="tech-pill" style="color: #1572B6;">CSS3</span>
+                    <span class="tech-pill" style="color: #54a6db;">Dashboard Development</span>
+                    <span class="tech-pill" style="color: #ffffff;">UI Design & Debugging</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
     <section id="skills" class="reveal">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
+
+            <!-- Languages -->
             <div class="skill-category">
-                <h3>Frontend</h3>
+                <h3>Languages</h3>
                 <div class="skill-icons-row">
+                    <div class="skill-icon-item">
+                        <div class="icon-container python"><i class="fab fa-python"></i></div>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container js"><i class="fab fa-js"></i></div>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container php"><i class="fab fa-php"></i></div>
+                        <span>PHP</span>
+                    </div>
                     <div class="skill-icon-item">
                         <div class="icon-container html"><i class="fab fa-html5"></i></div>
                         <span>HTML5</span>
@@ -167,45 +371,8 @@
                         <span>CSS3</span>
                     </div>
                     <div class="skill-icon-item">
-                        <div class="icon-container js"><i class="fab fa-js"></i></div>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-                <div class="skill-bars">
-                    <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>HTML</span><span>90%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress html" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>CSS</span><span>85%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress css" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>JS</span><span>75%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress js" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Backend</h3>
-                <div class="skill-icons-row">
-                    <div class="skill-icon-item">
-                        <div class="icon-container python"><i class="fab fa-python"></i></div>
-                        <span>Python</span>
-                    </div>
-                    <div class="skill-icon-item">
-                        <div class="icon-container flask"><i class="fas fa-pepper-hot"></i></div>
-                        <span>Flask</span>
-                    </div>
-                    <div class="skill-icon-item">
-                        <div class="icon-container api"><i class="fas fa-plug"></i></div>
-                        <span>REST APIs</span>
+                        <div class="icon-container sqlite"><i class="fas fa-database"></i></div>
+                        <span>SQL</span>
                     </div>
                 </div>
                 <div class="skill-bars">
@@ -216,42 +383,148 @@
                         </div>
                     </div>
                     <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>Flask</span><span>80%</span></div>
+                        <div class="skill-bar-info"><span>JavaScript</span><span>85%</span></div>
                         <div class="progress-bar">
-                            <div class="progress flask" style="width: 80%;"></div>
+                            <div class="progress js" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>PHP</span><span>78%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress php" style="width: 78%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>HTML5 / CSS3</span><span>92%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress html" style="width: 92%;"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Frontend -->
             <div class="skill-category">
-                <h3>Database</h3>
+                <h3>Frontend</h3>
+                <div class="skill-icons-row">
+                    <div class="skill-icon-item">
+                        <div class="icon-container react"><i class="fab fa-react"></i></div>
+                        <span>React.js</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container tailwind"><i class="fas fa-wind"></i></div>
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container jinja"><i class="fas fa-code"></i></div>
+                        <span>Jinja2</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container html"><i class="fas fa-mobile-alt"></i></div>
+                        <span>Responsive</span>
+                    </div>
+                </div>
+                <div class="skill-bars">
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>React.js</span><span>85%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress react" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>Tailwind CSS</span><span>88%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress tailwind" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>Responsive Web Design</span><span>92%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress css" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend & APIs -->
+            <div class="skill-category">
+                <h3>Backend & APIs</h3>
+                <div class="skill-icons-row">
+                    <div class="skill-icon-item">
+                        <div class="icon-container flask"><i class="fas fa-pepper-hot"></i></div>
+                        <span>Flask</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container socketio"><i class="fas fa-network-wired"></i></div>
+                        <span>SocketIO</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container api"><i class="fas fa-plug"></i></div>
+                        <span>REST APIs</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container php"><i class="fab fa-php"></i></div>
+                        <span>PHP</span>
+                    </div>
+                </div>
+                <div class="skill-bars">
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>Flask & Flask-SQLAlchemy</span><span>86%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress flask" style="width: 86%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>REST APIs</span><span>88%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress python" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>Flask-SocketIO</span><span>80%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress socketio" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="skill-category">
+                <h3>Databases</h3>
                 <div class="skill-icons-row">
                     <div class="skill-icon-item">
                         <div class="icon-container sqlite"><i class="fas fa-database"></i></div>
                         <span>SQLite</span>
                     </div>
                     <div class="skill-icon-item">
-                        <div class="icon-container mysql"><i class="fas fa-database"></i></div>
+                        <div class="icon-container mysql"><i class="fas fa-server"></i></div>
                         <span>MySQL</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container sqlite"><i class="fas fa-table"></i></div>
+                        <span>SQL Queries</span>
                     </div>
                 </div>
                 <div class="skill-bars">
                     <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>SQLite</span><span>85%</span></div>
+                        <div class="skill-bar-info"><span>SQLite</span><span>88%</span></div>
                         <div class="progress-bar">
-                            <div class="progress sqlite" style="width: 85%;"></div>
+                            <div class="progress sqlite" style="width: 88%;"></div>
                         </div>
                     </div>
                     <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>MySQL</span><span>70%</span></div>
+                        <div class="skill-bar-info"><span>MySQL</span><span>80%</span></div>
                         <div class="progress-bar">
-                            <div class="progress mysql" style="width: 70%;"></div>
+                            <div class="progress mysql" style="width: 80%;"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Tools & Deployment -->
             <div class="skill-category">
-                <h3>Tools</h3>
+                <h3>Tools & Deployment</h3>
                 <div class="skill-icons-row">
                     <div class="skill-icon-item">
                         <div class="icon-container git"><i class="fab fa-git-alt"></i></div>
@@ -265,239 +538,241 @@
                         <div class="icon-container vscode"><i class="fas fa-code"></i></div>
                         <span>VS Code</span>
                     </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container vite"><i class="fas fa-bolt"></i></div>
+                        <span>Vite</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container figma"><i class="fab fa-figma"></i></div>
+                        <span>Figma</span>
+                    </div>
                 </div>
                 <div class="skill-bars">
                     <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>Git</span><span>82%</span></div>
+                        <div class="skill-bar-info"><span>Git & GitHub</span><span>88%</span></div>
                         <div class="progress-bar">
-                            <div class="progress git" style="width: 82%;"></div>
+                            <div class="progress git" style="width: 88%;"></div>
                         </div>
                     </div>
                     <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>GitHub</span><span>85%</span></div>
+                        <div class="skill-bar-info"><span>VS Code & Vite</span><span>85%</span></div>
                         <div class="progress-bar">
-                            <div class="progress github" style="width: 85%;"></div>
+                            <div class="progress vite" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>Figma (UI/UX)</span><span>80%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress figma" style="width: 80%;"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Libraries & Specializations -->
             <div class="skill-category">
-                <h3>Applications</h3>
+                <h3>Libraries & Domains</h3>
                 <div class="skill-icons-row">
                     <div class="skill-icon-item">
-                        <div class="icon-container antigravity"><i class="fas fa-rocket"></i></div>
-                        <span>Antigravity</span>
+                        <div class="icon-container tesseract"><i class="fas fa-eye"></i></div>
+                        <span>Tesseract OCR</span>
                     </div>
                     <div class="skill-icon-item">
-                        <div class="icon-container codeblocks"><i class="fas fa-cube"></i></div>
-                        <span>CodeBlocks</span>
+                        <div class="icon-container matplotlib"><i class="fas fa-chart-line"></i></div>
+                        <span>Matplotlib</span>
                     </div>
                     <div class="skill-icon-item">
-                        <div class="icon-container vb"><i class="fas fa-code"></i></div>
-                        <span>VB Code</span>
+                        <div class="icon-container optimization"><i class="fas fa-gauge-high"></i></div>
+                        <span>Optimization</span>
                     </div>
                     <div class="skill-icon-item">
-                        <div class="icon-container docker"><i class="fab fa-docker"></i></div>
-                        <span>Docker</span>
+                        <div class="icon-container uiux"><i class="fas fa-palette"></i></div>
+                        <span>UI/UX & Design</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <div class="icon-container seo"><i class="fas fa-magnifying-glass-chart"></i></div>
+                        <span>SEO</span>
                     </div>
                 </div>
                 <div class="skill-bars">
                     <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>CodeBlocks</span><span>83%</span></div>
+                        <div class="skill-bar-info"><span>Performance & PageSpeed Optimization</span><span>88%</span></div>
                         <div class="progress-bar">
-                            <div class="progress codeblocks" style="width: 83%;"></div>
+                            <div class="progress optimization" style="width: 88%;"></div>
                         </div>
                     </div>
                     <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>Docker</span><span>70%</span></div>
+                        <div class="skill-bar-info"><span>UI/UX & Graphic Design</span><span>85%</span></div>
                         <div class="progress-bar">
-                            <div class="progress docker" style="width: 70%;"></div>
+                            <div class="progress uiux" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-info"><span>Flask Ecosystem (Migrate, Login, WTF, Werkzeug)</span><span>82%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress flask" style="width: 82%;"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="skill-category">
-                <h3>Operating Systems</h3>
-                <div class="skill-icons-row">
-                    <div class="skill-icon-item">
-                        <div class="icon-container windows"><i class="fab fa-windows"></i></div>
-                        <span>Windows</span>
-                    </div>
-                    <div class="skill-icon-item">
-                        <div class="icon-container mac"><i class="fab fa-apple"></i></div>
-                        <span>Mac</span>
-                    </div>
-                    <div class="skill-icon-item">
-                        <div class="icon-container kali"><i class="fab fa-linux"></i></div>
-                        <span>Kali Linux</span>
-                    </div>
-                    <div class="skill-icon-item">
-                        <div class="icon-container ubuntu"><i class="fab fa-ubuntu"></i></div>
-                        <span>Ubuntu</span>
-                    </div>
-                </div>
-                <div class="skill-bars">
-                    <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>Windows</span><span>85%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress windows" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-group">
-                        <div class="skill-bar-info"><span>Ubuntu</span><span>75%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress ubuntu" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
 
+    <!-- Services / What I Do -->
     <section id="services" class="reveal">
         <h2 class="section-title">What I Do</h2>
         <div class="services-grid">
             <div class="service-card">
                 <i class="fas fa-laptop-code service-icon"></i>
-                <h3>Frontend Development</h3>
-                <p>Creating responsive, interactive, and visually appealing user interfaces using HTML, CSS, and modern
-                    JavaScript.</p>
+                <h3>Frontend Web Development</h3>
+                <p>Creating fast, responsive, and aesthetically stunning user interfaces with React.js, Tailwind CSS, JavaScript, and HTML5/CSS3.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-server service-icon"></i>
-                <h3>Backend Development</h3>
-                <p>Building robust server-side logic and REST APIs using Python and Flask to power web applications.</p>
+                <h3>Backend Engineering & APIs</h3>
+                <p>Building secure server-side architectures, RESTful APIs, and real-time SocketIO communication using Python, Flask, and PHP.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-gauge-high service-icon"></i>
+                <h3>Performance & Page-Speed Optimization</h3>
+                <p>Improving web performance via WebP image conversion, asset minification, caching strategies, and Core Web Vitals optimization.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-palette service-icon"></i>
+                <h3>UI/UX & Graphic Design</h3>
+                <p>Designing modern user journeys, intuitive wireframes, responsive layouts, banners, logos, and digital branding assets in Figma.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-database service-icon"></i>
-                <h3>Database Management</h3>
-                <p>Designing efficient schemas and managing relational databases with SQLite and MySQL.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-plug service-icon"></i>
-                <h3>API Integration</h3>
-                <p>Connecting applications to third-party services and APIs &mdash; from payment gateways to weather
-                    data &amp; more.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-credit-card service-icon"></i>
-                <h3>Payment Integration</h3>
-                <p>Integrating secure online payment gateways like Stripe or PayPal for seamless user transactions.</p>
+                <h3>Database Architecture</h3>
+                <p>Designing efficient relational schemas, writing optimized queries, and managing databases with SQLite, MySQL, and Flask-SQLAlchemy.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-cloud-upload-alt service-icon"></i>
-                <h3>Deployment</h3>
-                <p>Hosting and deploying web applications on cloud platforms like AWS, Heroku, or PythonAnywhere to
-                    ensure high availability.</p>
+                <h3>Deployment & Cloud Hosting</h3>
+                <p>Deploying production applications to modern platforms like Netlify, HostGator, and Render with continuous Git workflows.</p>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="reveal">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
 
-            <div class="project-card reveal" data-id="expense-tracker">
-                <img src="images/expenses tracker.webp" alt="Expense Tracker" class="project-img" loading="lazy">
-                <h3>Expense Tracker Web App</h3>
-                <p>A web application to track daily expenses and manage personal finances.</p>
-                <div class="tech-stack">
-                    <span class="tech-pill" style="color: #FFD43B;">Python</span>
-                    <span class="tech-pill" style="color: #ffffff;">Flask</span>
-                    <span class="tech-pill" style="color: #54a6db;">SQLite</span>
-                </div>
-                <div class="project-links">
-                    <button class="btn btn-primary btn-details"
-                        style="padding: 8px 20px; font-size: 13px;">Details</button>
-                    <a href="https://github.com/luckyyyroyyy" class="btn btn-outline"
-                        style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-
+            <!-- SkillSwap Pro -->
             <div class="project-card reveal" data-id="skill-swap">
-                <img src="images/skillswap.webp" alt="Skill Swap Pro" class="project-img" loading="lazy">
-                <h3>Skill Swap Pro</h3>
-                <p>A platform for users to swap and mutually learn new skills.</p>
+                <img src="images/skillswap.webp" alt="SkillSwap Pro" class="project-img" loading="lazy">
+                <h3>SkillSwap Pro</h3>
+                <p>A full-stack skill-sharing platform connecting users based on skills they offer and want to learn with real-time SocketIO chat and gamification.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill" style="color: #FFD43B;">Python</span>
+                    <span class="tech-pill" style="color: #ffffff;">Flask</span>
+                    <span class="tech-pill" style="color: #06B6D4;">Tailwind CSS</span>
+                    <span class="tech-pill" style="color: #54a6db;">Flask-SocketIO</span>
+                    <span class="tech-pill" style="color: #F7DF1E;">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <button class="btn btn-primary btn-details"
+                        style="padding: 8px 20px; font-size: 13px;">Details</button>
+                    <a href="https://github.com/luckyyyroyyy/Skill-Swap.git" target="_blank" class="btn btn-outline"
+                        style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <!-- ExpenseOrbit -->
+            <div class="project-card reveal" data-id="expense-tracker">
+                <img src="images/expenses tracker.webp" alt="ExpenseOrbit" class="project-img" loading="lazy">
+                <h3>ExpenseOrbit</h3>
+                <p>A full-stack personal finance application with automatic merchant categorization, Tesseract OCR receipt scanning, analytics charts, and PWA offline support.</p>
                 <div class="tech-stack">
                     <span class="tech-pill" style="color: #FFD43B;">Python</span>
                     <span class="tech-pill" style="color: #ffffff;">Flask</span>
                     <span class="tech-pill" style="color: #54a6db;">SQLite</span>
-                    <span class="tech-pill" style="color: #E34F26;">HTML</span>
-                    <span class="tech-pill" style="color: #1572B6;">CSS</span>
+                    <span class="tech-pill" style="color: #4CAF50;">Tesseract OCR</span>
+                    <span class="tech-pill" style="color: #11557c;">Matplotlib</span>
+                    <span class="tech-pill" style="color: #F7DF1E;">PWA</span>
                 </div>
                 <div class="project-links">
                     <button class="btn btn-primary btn-details"
                         style="padding: 8px 20px; font-size: 13px;">Details</button>
-                    <a href="https://github.com/luckyyyroyyy" class="btn btn-outline"
+                    <a href="https://github.com/luckyyyroyyy/Expense-tracker-pro.git" target="_blank" class="btn btn-outline"
                         style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
 
-            <div class="project-card reveal" data-id="student-management">
-                <img src="images/stumangsys.webp" alt="Student Management System" class="project-img" loading="lazy">
-                <h3>Student Management System</h3>
-                <p>A comprehensive web app for managing student records and data.</p>
-                <div class="tech-stack">
-                    <span class="tech-pill" style="color: #ffffff;">Flask</span>
-                    <span class="tech-pill" style="color: #E34F26;">HTML</span>
-                    <span class="tech-pill" style="color: #1572B6;">CSS</span>
-                    <span class="tech-pill" style="color: #54a6db;">SQLite</span>
-                </div>
-                <div class="project-links">
-                    <button class="btn btn-primary btn-details"
-                        style="padding: 8px 20px; font-size: 13px;">Details</button>
-                    <a href="https://github.com/luckyyyroyyy" class="btn btn-outline"
-                        style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-id="weather-app">
-                <img src="images/weather.webp" alt="Weather App" class="project-img" loading="lazy">
-                <h3>Weather App</h3>
-                <p>An application that provides real-time weather data by integrating an external API.</p>
-                <div class="tech-stack">
-                    <span class="tech-pill" style="color: #FFD43B;">Python</span>
-                    <span class="tech-pill" style="color: #4FC08D;">API</span>
-                </div>
-                <div class="project-links">
-                    <button class="btn btn-primary btn-details"
-                        style="padding: 8px 20px; font-size: 13px;">Details</button>
-                    <a href="https://github.com/luckyyyroyyy" class="btn btn-outline"
-                        style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-id="calculator">
-                <img src="images/calculator.webp" alt="Calculator App" class="project-img" loading="lazy">
-                <h3>Calculator Dashboard</h3>
-                <p>A functional calculator utility application for quick mathematical operations.</p>
-                <div class="tech-stack">
-                    <span class="tech-pill" style="color: #FFD43B;">Python</span>
-                </div>
-                <div class="project-links">
-                    <button class="btn btn-primary btn-details"
-                        style="padding: 8px 20px; font-size: 13px;">Details</button>
-                    <a href="https://github.com/luckyyyroyyy" class="btn btn-outline"
-                        style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-
+            <!-- The Herbal Basket -->
             <div class="project-card reveal" data-id="herbal-basket">
                 <img src="images/herbal.webp" alt="The Herbal Basket" class="project-img" loading="lazy">
                 <h3>The Herbal Basket</h3>
-                <p>An online store platform for herbal products with payment integration.</p>
+                <p>An e-commerce online store platform for organic and herbal goods featuring a shopping cart, Stripe payment gateway, and admin panel.</p>
                 <div class="tech-stack">
                     <span class="tech-pill" style="color: #FFD43B;">Python</span>
                     <span class="tech-pill" style="color: #ffffff;">Flask</span>
                     <span class="tech-pill" style="color: #54a6db;">SQLite</span>
-                    <span class="tech-pill" style="color: #E34F26;">HTML</span>
-                    <span class="tech-pill" style="color: #1572B6;">CSS</span>
                     <span class="tech-pill" style="color: #635bff;">Stripe API</span>
+                    <span class="tech-pill" style="color: #E34F26;">HTML5/CSS3</span>
                 </div>
                 <div class="project-links">
                     <button class="btn btn-primary btn-details"
                         style="padding: 8px 20px; font-size: 13px;">Details</button>
-                    <a href="https://github.com/luckyyyroyyy" class="btn btn-outline"
+                    <a href="https://github.com/luckyyyroyyy" target="_blank" class="btn btn-outline"
+                        style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <!-- Student Management System -->
+            <div class="project-card reveal" data-id="student-management">
+                <img src="images/stumangsys.webp" alt="Student Management System" class="project-img" loading="lazy">
+                <h3>Student Management System</h3>
+                <p>A comprehensive web application for managing academic records, tracking attendance, handling grades, and generating reports.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill" style="color: #ffffff;">Flask</span>
+                    <span class="tech-pill" style="color: #FFD43B;">Python</span>
+                    <span class="tech-pill" style="color: #54a6db;">SQLite</span>
+                    <span class="tech-pill" style="color: #7952B3;">Bootstrap</span>
+                </div>
+                <div class="project-links">
+                    <button class="btn btn-primary btn-details"
+                        style="padding: 8px 20px; font-size: 13px;">Details</button>
+                    <a href="https://github.com/luckyyyroyyy/Student-management-system.git" target="_blank" class="btn btn-outline"
+                        style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <!-- Weather App -->
+            <div class="project-card reveal" data-id="weather-app">
+                <img src="images/weather.webp" alt="Weather App" class="project-img" loading="lazy">
+                <h3>Weather App</h3>
+                <p>A dynamic weather application providing real-time meteorological conditions, forecasts, and live data via REST API.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill" style="color: #FFD43B;">Python</span>
+                    <span class="tech-pill" style="color: #4FC08D;">REST API</span>
+                    <span class="tech-pill" style="color: #F7DF1E;">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <button class="btn btn-primary btn-details"
+                        style="padding: 8px 20px; font-size: 13px;">Details</button>
+                    <a href="https://github.com/luckyyyroyyy/weather-app-api.git" target="_blank" class="btn btn-outline"
+                        style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <!-- Calculator Dashboard -->
+            <div class="project-card reveal" data-id="calculator">
+                <img src="images/calculator.webp" alt="Calculator App" class="project-img" loading="lazy">
+                <h3>Calculator Dashboard</h3>
+                <p>A functional calculator utility application for quick mathematical operations with an OLED-inspired dark UI.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill" style="color: #F7DF1E;">JavaScript</span>
+                    <span class="tech-pill" style="color: #FFD43B;">Python</span>
+                    <span class="tech-pill" style="color: #E34F26;">HTML/CSS</span>
+                </div>
+                <div class="project-links">
+                    <button class="btn btn-primary btn-details"
+                        style="padding: 8px 20px; font-size: 13px;">Details</button>
+                    <a href="https://github.com/luckyyyroyyy/Calculator--python.git" target="_blank" class="btn btn-outline"
                         style="padding: 8px 20px; font-size: 13px;"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
@@ -505,95 +780,159 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="reveal">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+
+            <!-- BCA Degree -->
+            <div class="edu-card">
+                <div class="edu-card-header">
+                    <div>
+                        <h3>Bachelor of Computer Applications (BCA)</h3>
+                        <div class="institution">
+                            <i class="fas fa-university"></i> Sir M Visvesvaraya Degree College
+                        </div>
+                        <div class="edu-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</div>
+                    </div>
+                    <span class="exp-date-badge">
+                        <i class="fas fa-graduation-cap"></i> 2023 – 2026
+                    </span>
+                </div>
+
+                <div class="edu-metrics">
+                    <span class="edu-metric-badge highlight">CGPA: 8.94</span>
+                    <span class="edu-metric-badge highlight">SGPA: 8.98</span>
+                    <span class="edu-metric-badge">Graduated: July 2026</span>
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">
+                    Graduated with high distinction in Computer Applications. Studied core principles of software engineering, object-oriented programming, data structures, relational database management systems (RDBMS), web development, and cloud concepts.
+                </p>
+            </div>
+
+            <!-- PUC -->
+            <div class="edu-card">
+                <div class="edu-card-header">
+                    <div>
+                        <h3>Pre-University Course (PUC)</h3>
+                        <div class="institution">
+                            <i class="fas fa-school"></i> Samruddhi PU and Degree College
+                        </div>
+                        <div class="edu-location"><i class="fas fa-map-marker-alt"></i> Hoskote, Karnataka</div>
+                    </div>
+                    <span class="exp-date-badge intern">
+                        <i class="fas fa-calendar-check"></i> 2023
+                    </span>
+                </div>
+
+                <div class="edu-metrics">
+                    <span class="edu-metric-badge highlight">Percentage: 76%</span>
+                    <span class="edu-metric-badge">Completed 2023</span>
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">
+                    Completed Pre-University education with a strong academic foundation in mathematics, analytical reasoning, logic, and scientific foundations preparing for advanced computer application studies.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
     <section id="certifications" class="reveal">
         <h2 class="section-title">Certifications & Achievements</h2>
         <div class="certifications-grid">
             <div class="cert-card">
-                <i class="fas fa-certificate cert-icon"></i>
-                <h3>AWS Cloud Practitioner</h3>
+                <i class="fas fa-cloud cert-icon"></i>
+                <h3>AWS Certification</h3>
                 <span class="cert-badge cert-red clickable-badge" data-cert-img="images/AWS-Certification.pdf"
-                    data-cert-title="AWS Cloud Practitioner">Certified</span>
-                <p>Validated knowledge of AWS cloud infrastructure, core services, cloud security, and scalable architecture best practices.</p>
+                    data-cert-title="AWS Certification">Certificate</span>
+                <p>Validated expertise in AWS cloud services, cloud infrastructure fundamentals, security best practices, and scalable cloud solutions.</p>
             </div>
             <div class="cert-card">
-                <i class="fas fa-award cert-icon"></i>
-                <h3>Web Development Bootcamp</h3>
-                <span class="cert-badge cert-red clickable-badge"
-                    data-cert-img="https://via.placeholder.com/800x600/1a1a1a/ff0033?text=Web+Development+Bootcamp+Certificate"
-                    data-cert-title="Web Development Bootcamp">Certified</span>
-                <p>Mastered full-stack web development concepts, responsive design, and deployment strategies.</p>
-            </div>
-            <div class="cert-card">
-                <i class="fas fa-briefcase cert-icon"></i>
-                <h3>Python & Web Dev Internship</h3>
-                <span class="cert-badge cert-blue clickable-badge" data-cert-img="images/Ex-intern.pdf"
-                    data-cert-title="Python & Web Dev Internship">Ex-Intern</span>
-                <p>Completed an internship building production-grade web applications using Python and Flask.</p>
-            </div>
-            <div class="cert-card">
-                <i class="fas fa-trophy cert-icon"></i>
-                <h3>DevOps</h3>
+                <i class="fas fa-gears cert-icon"></i>
+                <h3>DevOps Workshop Certification</h3>
                 <span class="cert-badge cert-yellow clickable-badge" data-cert-img="images/devOps.pdf"
-                    data-cert-title="DevOps">Achievement</span>
-                <p>Studied DevOps engineering principles, CI/CD pipelines, containerization, and modern cloud deployment practices.</p>
+                    data-cert-title="DevOps Workshop Certification">Certificate</span>
+                <p>Practical training in DevOps principles, CI/CD pipelines, containerization workflows, and automated deployment methodologies.</p>
             </div>
             <div class="cert-card">
-                <i class="fas fa-building cert-icon"></i>
-                <h3>Deloitte Virtual Experience</h3>
+                <i class="fas fa-shield-halved cert-icon"></i>
+                <h3>Cyber Security – Deloitte</h3>
                 <span class="cert-badge cert-blue clickable-badge" data-cert-img="images/deloitte.pdf"
-                    data-cert-title="Deloitte Virtual Experience">Experience</span>
-                <p>Participated in the Deloitte virtual experience program, gaining hands-on insight into professional
-                    consulting and technology services.</p>
+                    data-cert-title="Cyber Security – Deloitte">Certificate</span>
+                <p>Completed Deloitte cybersecurity virtual experience program focusing on security analysis, threat mitigation, and enterprise compliance.</p>
             </div>
             <div class="cert-card">
                 <i class="fas fa-laptop-code cert-icon"></i>
-                <h3>Software Engineering & IT</h3>
+                <h3>Software Development & IT Certification</h3>
                 <span class="cert-badge cert-red clickable-badge" data-cert-img="images/software-engineering.pdf"
-                    data-cert-title="Software Engineering & IT">Certified</span>
-                <p>Acquired robust foundations in software engineering principles, system design, and overarching IT
-                    technologies.</p>
+                    data-cert-title="Software Development & IT Certification">Certificate</span>
+                <p>Mastered core software engineering practices, system design fundamentals, version control workflows, and full-stack development.</p>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-briefcase cert-icon"></i>
+                <h3>Internship Certification</h3>
+                <span class="cert-badge cert-blue clickable-badge" data-cert-img="images/Ex-intern.pdf"
+                    data-cert-title="Internship Certification">Certificate</span>
+                <p>Professional certificate awarded for successfully completing web development internship at VM Technology and Financial Services (VMTFS).</p>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-chart-pie cert-icon"></i>
+                <h3>Data Analytics Certification</h3>
+                <span class="cert-badge cert-red clickable-badge"
+                    data-cert-img="https://via.placeholder.com/800x600/1a1a1a/ff0033?text=Data+Analytics+Certificate"
+                    data-cert-title="Data Analytics Certification">Certificate</span>
+                <p>Trained in data visualization, quantitative analysis, pattern recognition, and reporting with analytical tools and Python libraries.</p>
             </div>
         </div>
     </section>
 
-
+    <!-- Contact Section -->
     <section id="contact" class="reveal">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <p>Let's collaborate! I am always open to discussing exciting projects and new opportunities.</p>
+                <p>Let's collaborate! I am always open to discussing web development projects, freelance work, software engineering roles, and innovative opportunities.</p>
 
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>luckyyyroyyy@gmail.com</span>
+                    <span><a href="mailto:luckyyyroyyy@gmail.com" style="color: inherit; text-decoration: none;">luckyyyroyyy@gmail.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span><a href="tel:+916360164066" style="color: inherit; text-decoration: none;">+91 6360164066</a></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bangalore, Karnataka, India</span>
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-github"></i>
-                    <span>github.com/luckyyyroyyy</span>
+                    <span><a href="https://github.com/luckyyyroyyy" target="_blank" style="color: inherit; text-decoration: none;">github.com/luckyyyroyyy</a></span>
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-linkedin"></i>
-                    <span>Lucky Roy</span>
+                    <span><a href="https://www.linkedin.com/in/luckyyyroyyy/" target="_blank" style="color: inherit; text-decoration: none;">linkedin.com/in/luckyyyroyyy</a></span>
                 </div>
 
                 <div class="contact-socials">
-                    <a href="https://github.com/luckyyyroyyy" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/luckyyyroyyy/" target="_blank"><i
+                    <a href="https://github.com/luckyyyroyyy" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/luckyyyroyyy/" target="_blank" title="LinkedIn"><i
                             class="fab fa-linkedin-in"></i></a>
-                    <a href="mailto:luckyyyroyyy@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:luckyyyroyyy@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+916360164066" title="Call"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
 
             <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                <!-- Replace with your Access Key -->
+                <!-- Web3Forms Access Key -->
                 <input type="hidden" name="access_key" value="37155e05-54ca-4784-b337-d1029321d2f1">
 
                 <input type="text" name="name" placeholder="Your Name" pattern="[a-zA-Z\s]+" title="Name should only contain letters and spaces" required>
                 <input type="email" name="email" placeholder="Your Email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
-
-                <!-- Optional: To redirect user after successful submit -->
-                <!-- <input type="hidden" name="redirect" value="https://web3forms.com/success"> -->
 
                 <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
             </form>
@@ -601,7 +940,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Lucky Roy &mdash; Built with HTML, CSS & JavaScript</p>
+        <p>&copy; 2026 Lucky Roy M &mdash; Web Developer & Graphic Designer</p>
     </footer>
 
     <!-- Project Modal -->
@@ -645,7 +984,7 @@
             </div>
             <div id="chatbot-messages" class="chatbot-messages">
                 <div class="message bot-message">
-                    <p>Hi there! I'm Lucky's AI assistant. How can I help you today?</p>
+                    <p>Hi there! I'm Lucky Roy M's AI assistant. Ask me anything about Lucky's professional experience, technical skills, projects, or education!</p>
                 </div>
             </div>
             <div class="chatbot-input-area">
@@ -653,7 +992,7 @@
                 <button id="send-chat" class="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
-        <button id="chatbot-toggle" class="chatbot-toggle">
+        <button id="chatbot-toggle" class="chatbot-toggle" title="Chat with AI Assistant">
             <i class="fas fa-comment-dots"></i>
         </button>
     </div>
