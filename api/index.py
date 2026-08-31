@@ -29,6 +29,8 @@ def get_system_prompt():
 SYSTEM_PROMPT = get_system_prompt()
 
 @app.route('/api/chat', methods=['POST', 'GET'])
+@app.route('/chat', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def chat():
     if request.method == 'GET':
         return jsonify({
