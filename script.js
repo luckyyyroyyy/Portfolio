@@ -504,11 +504,11 @@ if (chatInput) {
     });
 }
 
-// Suggestion Chip Event Listeners
-const suggestionChips = document.querySelectorAll('.suggestion-chip');
-suggestionChips.forEach(chip => {
-    chip.addEventListener('click', () => {
-        const prompt = chip.getAttribute('data-prompt') || chip.textContent.trim();
+// In-Chat Option Buttons Event Listeners
+const chatOptionBtns = document.querySelectorAll('.chat-option-btn');
+chatOptionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const prompt = btn.getAttribute('data-prompt') || btn.textContent.trim();
         sendMessage(prompt);
     });
-});
+});
