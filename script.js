@@ -437,8 +437,9 @@ function showTypingIndicator() {
 }
 
 // Send Message
-async function sendMessage() {
-    const text = chatInput.value.trim();
+// Send Message
+async function sendMessage(customText) {
+    const text = (typeof customText === 'string' && customText.trim()) ? customText.trim() : chatInput.value.trim();
     if (!text) return;
 
     // Add user message to UI and history
@@ -486,13 +487,13 @@ async function sendMessage() {
     } catch (error) {
         typingIndicator.remove();
         console.error('Chat API Error:', error);
-        appendMessage('model', 'Sorry, I am having trouble connecting to my server right now. Make sure the Flask backend is running!');
+        appendMessage('model', 'Sorry, I am having trouble connecting to my server right now. Make sure the backend is online!');
     }
 }
 
 // Event Listeners for sending message
 if (sendChatBtn) {
-    sendChatBtn.addEventListener('click', sendMessage);
+    sendChatBtn.addEventListener('click', () => sendMessage());
 }
 
 if (chatInput) {
@@ -502,3 +503,12 @@ if (chatInput) {
         }
     });
 }
+
+// Suggestion Chip Event Listeners
+const suggestionChips = document.querySelectorAll('.suggestion-chip');
+suggestionChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+        const prompt = chip.getAttribute('data-prompt') || chip.textContent.trim();
+        sendMessage(prompt);
+    });
+});
