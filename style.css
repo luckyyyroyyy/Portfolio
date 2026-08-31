@@ -1950,7 +1950,58 @@
     box-shadow: 0 3px 8px rgba(255, 0, 51, 0.3);
 }
 
-.chat-option-btn:active {
+.chat-section-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.chat-contacts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.chat-contact-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: #f0f0f0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 5px 9px;
+    font-size: 11.5px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.chat-contact-btn i {
+    font-size: 11px;
+}
+
+.chat-contact-btn.email-btn i { color: #ff4757; }
+.chat-contact-btn.phone-btn i { color: #2ed573; }
+.chat-contact-btn.linkedin-btn i { color: #00a8ff; }
+.chat-contact-btn.github-btn i { color: #ffffff; }
+.chat-contact-btn.resume-btn i { color: #ffa502; }
+
+.chat-contact-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.chat-contact-btn:active {
     transform: scale(0.97);
 }
 
