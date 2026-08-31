@@ -1,7 +1,9 @@
 import os
+import json
+import urllib.request
+import urllib.error
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import google.generativeai as genai
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -33,15 +35,13 @@ def chat():
     if request.method == 'GET':
         return jsonify({
             'status': 'online',
-            'message': 'Lucky Roy Portfolio Chatbot API (Free Gemini Powered) is running.'
+            'message': 'Lucky Roy Portfolio Chatbot API (Fast Gemini 2.5 Flash) is running.'
         })
 
     try:
         api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
             return jsonify({'error': 'GEMINI_API_KEY is not configured.'}), 500
-
-        genai.configure(api_key=api_key)
 
         data = request.json or {}
         user_message = data.get('message', '')
@@ -50,28 +50,43 @@ def chat():
         if not user_message:
             return jsonify({'error': 'Message is required'}), 400
 
-        formatted_history = []
-        for msg in history:
+        contents = []
+        for msg in history[-6:]:
             role = 'user' if msg.get('sender') == 'user' else 'model'
-            formatted_history.append({'role': role, 'parts': [msg.get('text', '')]})
+            contents.append({'role': role, 'parts': [{'text': msg.get('text', '')}]})
 
-        try:
-            model = genai.GenerativeModel(
-                model_name='gemini-2.5-flash',
-                system_instruction=SYSTEM_PROMPT
-            )
-            chat_session = model.start_chat(history=formatted_history)
-            response = chat_session.send_message(user_message)
-            return jsonify({'reply': response.text})
-        except Exception:
-            model = genai.GenerativeModel(
-                model_name='gemini-flash-latest',
-                system_instruction=SYSTEM_PROMPT
-            )
-            chat_session = model.start_chat(history=formatted_history)
-            response = chat_session.send_message(user_message)
-            return jsonify({'reply': response.text})
+        contents.append({'role': 'user', 'parts': [{'text': user_message}]})
 
+        payload = {
+            'systemInstruction': {'parts': [{'text': SYSTEM_PROMPT}]},
+            'contents': contents,
+            'generationConfig': {
+                'temperature': 0.7,
+                'maxOutputTokens': 500,
+                'thinkingConfig': {'thinkingBudget': 0}
+            }
+        }
+
+        url = f'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}'
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json'}
+        )
+
+        with urllib.request.urlopen(req, timeout=12) as response:
+            res_json = json.loads(response.read().decode('utf-8'))
+            candidates = res_json.get('candidates', [])
+            if candidates:
+                reply = candidates[0]['content']['parts'][0]['text']
+                return jsonify({'reply': reply})
+            else:
+                return jsonify({'reply': "I'm here to help! Feel free to ask me anything about Lucky Roy's skills or projects."})
+
+    except urllib.error.HTTPError as e:
+        err_body = e.read().decode('utf-8')
+        print(f"Gemini API Error {e.code}: {err_body}")
+        return jsonify({'error': f"Gemini API error: {e.code}"}), 500
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({'error': str(e)}), 500
