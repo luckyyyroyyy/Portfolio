@@ -449,11 +449,16 @@ async function sendMessage() {
     const typingIndicator = showTypingIndicator();
 
     try {
-        // Determine API Endpoint (Local Flask dev or Vercel serverless /api/chat)
-        const isLocal = window.location.protocol === 'file:' || 
-                        window.location.hostname === 'localhost' || 
-                        window.location.hostname === '127.0.0.1';
-        const apiUrl = isLocal ? 'http://127.0.0.1:5000/api/chat' : '/api/chat';
+        // Determine API Endpoint:
+        // 1. Local development -> Local Flask server (127.0.0.1:5000)
+        // 2. Vercel hosted domain -> Relative /api/chat
+        // 3. GitHub Pages / External -> Vercel Production Serverless URL
+        let apiUrl = '/api/chat';
+        if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            apiUrl = 'http://127.0.0.1:5000/api/chat';
+        } else if (window.location.hostname.includes('github.io') || window.location.hostname.includes('netlify.app')) {
+            apiUrl = 'https://portfolio-lucky-dev2.vercel.app/api/chat';
+        }
 
         // Send request to backend
         const response = await fetch(apiUrl, {
