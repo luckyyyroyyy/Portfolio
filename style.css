@@ -1811,13 +1811,6 @@
     pointer-events: none;
 }
 
-@media (max-width: 480px) {
-    .chatbot-window {
-        width: 300px;
-        height: 400px;
-    }
-}
-
 .chatbot-header {
     background: rgba(255, 0, 51, 0.1);
     border-bottom: 1px solid var(--border-color);
@@ -2606,4 +2599,85 @@
         opacity: 1;
         visibility: visible;
     }
-}
+
+    /* --- Mobile Chatbot Optimization --- */
+    .chatbot-container {
+        left: 14px;
+        bottom: 20px;
+        z-index: 2100;
+    }
+
+    .chatbot-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        box-shadow: 0 4px 15px rgba(255, 0, 51, 0.45);
+    }
+
+    .chatbot-window {
+        width: calc(100vw - 28px) !important;
+        max-width: 370px !important;
+        height: min(490px, 72vh) !important;
+        max-height: calc(100vh - 90px) !important;
+        margin-bottom: 10px;
+        border-radius: 16px;
+        transform-origin: bottom left;
+    }
+
+    .chatbot-messages {
+        padding: 12px 10px;
+        gap: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .message {
+        max-width: 92% !important;
+        font-size: 13.5px !important;
+        padding: 8px 12px !important;
+        line-height: 1.45;
+    }
+
+    .chat-section-label {
+        font-size: 10px !important;
+        margin-top: 6px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .chat-options-grid,
+    .chat-contacts-grid {
+        gap: 5px !important;
+        margin-top: 4px !important;
+    }
+
+    .chat-option-btn,
+    .chat-contact-btn {
+        font-size: 11px !important;
+        padding: 5px 8px !important;
+        border-radius: 10px !important;
+    }
+
+    .chatbot-input-area {
+        padding: 8px 10px !important;
+        gap: 6px !important;
+    }
+
+    .chatbot-input-area input {
+        font-size: 13px !important;
+        padding: 8px 12px !important;
+    }
+
+    .send-chat-btn {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 14px !important;
+        flex-shrink: 0;
+    }
+
+    .back-to-top {
+        right: 14px;
+        bottom: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+}
