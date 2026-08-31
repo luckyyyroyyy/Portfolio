@@ -12,21 +12,14 @@ This is my personal portfolio website created to showcase my professional work e
 - **Education Section:** Highlights of BCA from Sir M Visvesvaraya Degree College (CGPA: 8.94 / SGPA: 8.98) and PUC from Samruddhi PU & Degree College (76%).
 - **Certifications Viewer:** Interactive modal viewer supporting PDF certificates (AWS Certification, DevOps, Deloitte Cyber Security, Software Engineering & IT, Internship).
 - **Integrated Contact Form:** Web3Forms integration with real-time field validation, direct phone link (+91 6360164066), email, and social profiles.
-- **AI-Bot Integration:** Gemini-powered AI chatbot assistant capable of answering questions about Lucky's experience, skills, projects, and contact info in real-time.
+- **AI-Bot Integration:** OpenAI-powered AI chatbot assistant capable of answering questions about Lucky's experience, skills, projects, and contact info in real-time.
 
 ## 🛠️ Technologies Used
 
-### Frontend
-- HTML5 & CSS3 (Vanilla CSS with custom design tokens)
-- Vanilla JavaScript (ES6+)
-- FontAwesome Icons & Google Fonts (Poppins)
-- Hosted on **Netlify** / GitHub Pages
-
-### Backend (AI Chatbot)
-- Python 3 & Flask
-- Flask-CORS & python-dotenv
-- Google Generative AI SDK (Gemini Flash)
-- Hosted on **Render.com**
+### Frontend & Backend (All-in-One)
+- Frontend: HTML5, CSS3, Vanilla JS, FontAwesome, Poppins
+- Serverless Backend: Python 3, Flask, OpenAI API (`gpt-4o-mini`)
+- Hosted seamlessly on **Vercel** (Zero Cold Starts)
 
 ## 📂 Project Structure
 
@@ -38,10 +31,12 @@ portfolio/
 ├── script.js         # Frontend logic, modal handlers, and chatbot API client
 ├── resume.pdf        # Downloadable resume
 ├── images/           # Image and PDF certificate assets
-├── backend/          # Python Flask Server for the Chatbot
-│   ├── app.py        # Server script handling Gemini API requests
-│   ├── system_prompt.txt # Comprehensive context for the AI assistant
-│   └── requirements.txt  # Python dependencies
+├── api/              # Vercel Serverless Python Backend
+│   ├── index.py      # Serverless entrypoint handling OpenAI API requests
+│   └── system_prompt.txt # Comprehensive context for the AI assistant
+├── backend/          # Local Flask Server (for local testing)
+├── vercel.json       # Vercel serverless routing configuration
+├── requirements.txt  # Python dependencies for Vercel deployment
 └── README.md
 ```
 
@@ -58,8 +53,8 @@ cd portfolio
 cd backend
 pip install -r requirements.txt
 
-# Create a .env file and add your Gemini API Key
-echo "GEMINI_API_KEY=your_gemini_api_key_here" > .env
+# Create a .env file and add your OpenAI API Key
+echo "OPENAI_API_KEY=your_openai_api_key_here" > .env
 
 # Run the Flask server
 python app.py

@@ -449,8 +449,14 @@ async function sendMessage() {
     const typingIndicator = showTypingIndicator();
 
     try {
-        // Send request to Flask backend
-        const response = await fetch('https://lucky-portfolio-backend.onrender.com/api/chat', {
+        // Determine API Endpoint (Local Flask dev or Vercel serverless /api/chat)
+        const isLocal = window.location.protocol === 'file:' || 
+                        window.location.hostname === 'localhost' || 
+                        window.location.hostname === '127.0.0.1';
+        const apiUrl = isLocal ? 'http://127.0.0.1:5000/api/chat' : '/api/chat';
+
+        // Send request to backend
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
