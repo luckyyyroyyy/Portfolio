@@ -61,8 +61,8 @@ def chat():
             'systemInstruction': {'parts': [{'text': SYSTEM_PROMPT}]},
             'contents': contents,
             'generationConfig': {
-                'temperature': 0.7,
-                'maxOutputTokens': 500,
+                'temperature': 0.6,
+                'maxOutputTokens': 260,
                 'thinkingConfig': {'thinkingBudget': 0}
             }
         }
