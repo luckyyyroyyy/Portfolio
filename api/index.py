@@ -1,18 +1,13 @@
 import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from openai import OpenAI
+import google.generativeai as genai
 from dotenv import load_dotenv
 
-# Load local environment variables (if running locally)
 load_dotenv()
 
 app = Flask(__name__)
-# Enable CORS so any frontend origin can communicate with the serverless endpoint
 CORS(app)
-
-openai_api_key = os.environ.get("OPENAI_API_KEY")
-client = OpenAI(api_key=openai_api_key) if openai_api_key else None
 
 def get_system_prompt():
     possible_paths = [
@@ -28,19 +23,25 @@ def get_system_prompt():
 
 SYSTEM_PROMPT = get_system_prompt()
 
-@app.route('/api/chat', methods=['POST', 'GET'])
-@app.route('/chat', methods=['POST', 'GET'])
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/api/chat', methods=['POST', 'GET', 'OPTIONS'])
+@app.route('/chat', methods=['POST', 'GET', 'OPTIONS'])
+@app.route('/', methods=['POST', 'GET', 'OPTIONS'])
 def chat():
+    if request.method == 'OPTIONS':
+        return ('', 204)
+
     if request.method == 'GET':
         return jsonify({
             'status': 'online',
-            'message': 'Lucky Roy Portfolio Chatbot API (Vercel Serverless) is running.'
+            'message': 'Lucky Roy Portfolio Chatbot API (Free Gemini Powered) is running.'
         })
 
     try:
-        if not client:
-            return jsonify({'error': 'OPENAI_API_KEY is not configured on the server.'}), 500
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            return jsonify({'error': 'GEMINI_API_KEY is not configured.'}), 500
+
+        genai.configure(api_key=api_key)
 
         data = request.json or {}
         user_message = data.get('message', '')
@@ -49,34 +50,31 @@ def chat():
         if not user_message:
             return jsonify({'error': 'Message is required'}), 400
 
-        # Construct conversation messages for OpenAI
-        messages = [{'role': 'system', 'content': SYSTEM_PROMPT}]
+        formatted_history = []
         for msg in history:
-            role = 'user' if msg.get('sender') == 'user' else 'assistant'
-            messages.append({'role': role, 'content': msg.get('text', '')})
+            role = 'user' if msg.get('sender') == 'user' else 'model'
+            formatted_history.append({'role': role, 'parts': [msg.get('text', '')]})
 
-        # Append current user message
-        messages.append({'role': 'user', 'content': user_message})
-
-        # Generate response using OpenAI
-        completion = client.chat.completions.create(
-            model=os.environ.get("OPENAI_MODEL", "gpt-4o-mini"),
-            messages=messages,
-            temperature=0.7
-        )
-
-        reply = completion.choices[0].message.content
-
-        return jsonify({'reply': reply})
+        try:
+            model = genai.GenerativeModel(
+                model_name='gemini-2.5-flash',
+                system_instruction=SYSTEM_PROMPT
+            )
+            chat_session = model.start_chat(history=formatted_history)
+            response = chat_session.send_message(user_message)
+            return jsonify({'reply': response.text})
+        except Exception:
+            model = genai.GenerativeModel(
+                model_name='gemini-flash-latest',
+                system_instruction=SYSTEM_PROMPT
+            )
+            chat_session = model.start_chat(history=formatted_history)
+            response = chat_session.send_message(user_message)
+            return jsonify({'reply': response.text})
 
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({'error': str(e)}), 500
 
-@app.route('/api/health', methods=['GET'])
-def health():
-    return jsonify({'status': 'healthy', 'service': 'portfolio-chatbot'})
-
-# Local development server support
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
